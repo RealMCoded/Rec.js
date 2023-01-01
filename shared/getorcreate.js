@@ -1,18 +1,18 @@
-const fs = require("node:fs")
+const { userid, level, username } = require("../user-info/user.json")
 
 function GetOrCreate() {
     return JSON.stringify({
-        "Id": 1,
-        "Username": "Coach",
-        "DisplayName": "Coach",
+        "Id": userid,
+        "Username": username,
+        "DisplayName": username,
         "XP": 87,
-        "Level": 99,
+        "Level": level,
         "Reputation": 0,
         "Verified": true,
         "Developer": true,
         "HasEmail": true,
         "CanReceiveInvites": false,
-        "ProfileImageName": "Coach",
+        "ProfileImageName": username,
         "HasBirthday": true
     })
 }
