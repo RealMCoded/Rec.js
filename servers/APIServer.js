@@ -21,7 +21,7 @@ function startAPI(ver, serve_port = 2016){
 function serve() {
     //GET
     app.get('/', (req, res) => {
-        res.send('RecNetJS API Server.')
+        res.sendFile(path.resolve(`${__dirname}/port-in-use.html`))
     })
 
     app.get('/api/versioncheck/v1', (req, res) => {
