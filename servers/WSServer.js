@@ -1,5 +1,5 @@
 /*
-* TODO: Look into a better WS implementation instead of express. maybe ws?
+* TODO: Look into a better Websocket implementation instead of express. maybe ws?
 */
 
 const chalk = require('chalk')
@@ -22,12 +22,23 @@ function startWS(ver){
 }
 
 function serve() {
+    //Test endpoint
     app.ws('/echo', function(ws, req) {
         ws.on('message', function(msg) {
           ws.send(`[RecNet.js] ${msg}`);
         });
-    });
+    })
+
+    app.ws('/api/notification/v2', function(ws, req) {
+        //TODO: Get this to actually work.
+        ws.send(`[]`);
+    })
     
+    app.ws('/hub/v1', function(ws, req) {
+        //TODO: Get this to actually work.
+        ws.send(`[]`);
+    })
+
     app.listen(port, () => {
         console.log(`${chalk.blueBright("[WS]")} WS started on port ${port}`)
     })
