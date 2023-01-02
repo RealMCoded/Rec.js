@@ -6,15 +6,14 @@ const chalk = require('chalk')
 const express = require('express')
 const morgan = require('morgan')
 const app = express()
-const port = 20161
 const expressWs = require('express-ws')(app);
 app.use(morgan(`${chalk.blueBright("[WS]")} :method ":url" :status - :response-time ms`))
 
-let version;
+let port;
 
-function startWS(ver){
+function start(servePort = 20161){
     try {
-        version = ver
+        port = servePort
         serve()
     } catch(e) {
         console.error(e)
@@ -44,4 +43,4 @@ function serve() {
     })
 }
 
-module.exports = { startWS }
+module.exports = { start }

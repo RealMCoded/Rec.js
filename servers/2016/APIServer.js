@@ -3,15 +3,14 @@ const express = require('express') //express.js - the web server
 const morgan = require('morgan') //for webserver output
 const app = express()
 const path = require("path")
-const { userid } = require("../user-info/user.json")
+const { userid } = require("../../user-info/user.json")
 app.use(morgan(`${chalk.green("[API]")} :method ":url" :status - :response-time ms`))
 
-let version, port;
+let port;
 
-function startAPI(ver){
+function start(serveport = 2016){
     try {
-        port = ver
-        version = ver
+        port = serveport
         serve()
     } catch(e) {
         console.error(e)
@@ -21,7 +20,7 @@ function startAPI(ver){
 function serve() {
     //GET
     app.get('/', (req, res) => {
-        res.sendFile(path.resolve(`${__dirname}/port-in-use.html`))
+        res.sendFile(path.resolve(`${__dirname}/../port-in-use.html`))
     })
 
     app.get('/api/versioncheck/*', (req, res) => {
@@ -29,11 +28,11 @@ function serve() {
     })
 
     app.get('/api/images/v1/profile/*', (req, res) => {
-        res.sendFile(path.resolve(`${__dirname}/../user-info/ProfileImage.png`))
+        res.sendFile(path.resolve(`${__dirname}/../../user-info/ProfileImage.png`))
     })
 
     app.get('/api/avatar/v3/items', (req, res) => {
-        res.sendFile(path.resolve(`${__dirname}/../user-info/avataritems.txt`))
+        res.sendFile(path.resolve(`${__dirname}/../../user-info/avataritems.txt`))
     })
 
     app.get('/api/avatar/v2/gifts', (req, res) => {
@@ -41,7 +40,7 @@ function serve() {
     })
 
     app.get('/api/config/v2', (req, res) => {
-        res.send(require('../shared/config.js').config())
+        res.send(require('../../shared/config.js').config())
     })
 
     app.get('/api/avatar/v2', (req, res) => {
@@ -54,7 +53,7 @@ function serve() {
 
     //POST
     app.post('/api/players/v1/getorcreate', (req, res) => {
-        res.send(require("../shared/getorcreate.js").GetOrCreate())
+        res.send(require("../../shared/getorcreate.js").GetOrCreate())
     })
 
     app.post('/api/settings/v2/set', (req, res) => {
@@ -83,4 +82,4 @@ function serve() {
     })
 }
 
-module.exports = { startAPI }
+module.exports = { start }

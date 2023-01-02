@@ -49,8 +49,8 @@ if (ver == undefined) {
 switch(ver){
     case "2016": {
         console.error("Starting 2016")
-        require("./servers/APIServer.js").startAPI(2016)
-        require("./servers/WSServer.js").startWS(2016)
+        require("./servers/2016/APIServer.js").start()
+        require("./servers/WSServer.js").start()
     } break;
     //case "2017": {console.error("(2017 soon)")} break;
     //case "2018": {console.error("(2018 soon)")} break;
