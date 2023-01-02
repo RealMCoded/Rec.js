@@ -9,7 +9,7 @@
 A RecNet server replacement for old Rec Room builds
 
 **Current supported builds**
-- 2016
+- 2016 (Tested with December 23rd 2016)
 
 **Planned builds**
 - 2017
