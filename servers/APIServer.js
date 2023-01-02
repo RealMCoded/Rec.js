@@ -2,16 +2,15 @@ const chalk = require('chalk') // colored text
 const express = require('express') //express.js - the web server
 const morgan = require('morgan') //for webserver output
 const app = express()
-let port = 2016
 const path = require("path")
 const { userid } = require("../user-info/user.json")
 app.use(morgan(`${chalk.green("[API]")} :method ":url" :status - :response-time ms`))
 
-let version;
+let version, port;
 
-function startAPI(ver, serve_port = 2016){
+function startAPI(ver){
     try {
-        port = serve_port
+        port = ver
         version = ver
         serve()
     } catch(e) {
@@ -25,7 +24,7 @@ function serve() {
         res.sendFile(path.resolve(`${__dirname}/port-in-use.html`))
     })
 
-    app.get('/api/versioncheck/v1', (req, res) => {
+    app.get('/api/versioncheck/*', (req, res) => {
         res.send("{\"ValidVersion\":true}")
     })
 
@@ -66,11 +65,12 @@ function serve() {
     app.post('/api/players/v1/list', (req, res) => {
         res.send("[]")
     })
-+
+
     /*TODO: Make this actually upload as the profile image*/
 
     app.post('/api/images/v2/profile', (req, res) => {
-        res.send("[]")
+        console.log(`${chalk.green("[API]")} ${chalk.yellow("[WARN]")} Image upload called! Will work sometime in the future!`)
+        res.sendStatus(404);
     })
 
     app.post('/api/presence/v2/', (req, res) => {
