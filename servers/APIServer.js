@@ -4,6 +4,7 @@ const morgan = require('morgan')
 const app = express()
 let port = 2016
 const path = require("path")
+const { userid } = require("../user-info/user.json")
 app.use(morgan(`${chalk.green("[API]")} :method ":url" :status - :response-time ms`))
 
 let version;
@@ -29,6 +30,10 @@ function serve() {
     })
 
     app.get('/api/images/v1/profile/', (req, res) => {
+        res.sendFile(path.resolve(`${__dirname}/../user-info/ProfileImage.png`))
+    })
+
+    app.get(`/api/images/v1/profile/${userid}`, (req, res) => {
         res.sendFile(path.resolve(`${__dirname}/../user-info/ProfileImage.png`))
     })
 
@@ -59,6 +64,10 @@ function serve() {
 
     app.post('/api/settings/v2/set', (req, res) => {
         //TODO: Get this to actually work.
+        res.send("[]")
+    })
+
+    app.post('/api/players/v1/list', (req, res) => {
         res.send("[]")
     })
 
