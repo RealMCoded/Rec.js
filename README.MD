@@ -35,8 +35,4 @@ To start a server, run the following command
 npm run serve 2016
 ```
 
-Running `npm run serve` by itself will throw an error
-```
-ERROR: No version specified!.
-Example Usage: 'npm run serve 2016'.
-```
+Running `npm run serve` by itself, it will try to autostart whatever version is defined in your config.json file (default: 2016)
