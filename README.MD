@@ -6,7 +6,23 @@
 # RecNet.js
 </div>
 
-A RecNet server replacement for old Rec Room builds
+A RecNet server replacement for old Rec Room builds.
+
+## RecNet.js is..
+✅ a localhostable server for single person use
+
+✅ similar to [OpenRec](https://github.com/recroom2016/OpenRec) 
+
+✅ backwards compatible with [OpenRec](https://github.com/recroom2016/OpenRec)
+
+✅ fast, small, and portable (~500kb base download, ~3MB after package download)
+
+## RecNet.js is not...
+❌ a server that multiple people can connect to
+
+❌ similar to OpenRec Live / OpenLabs
+
+❌ slow and bloated
 
 **Current supported builds**
 - 2016 (Tested with December 23rd 2016)
