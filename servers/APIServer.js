@@ -1,6 +1,6 @@
-const chalk = require('chalk')
-const express = require('express')
-const morgan = require('morgan')
+const chalk = require('chalk') // colored text
+const express = require('express') //express.js - the web server
+const morgan = require('morgan') //for webserver output
 const app = express()
 let port = 2016
 const path = require("path")
@@ -29,11 +29,7 @@ function serve() {
         res.send("{\"ValidVersion\":true}")
     })
 
-    app.get('/api/images/v1/profile/', (req, res) => {
-        res.sendFile(path.resolve(`${__dirname}/../user-info/ProfileImage.png`))
-    })
-
-    app.get(`/api/images/v1/profile/${userid}`, (req, res) => {
+    app.get('/api/images/v1/profile/*', (req, res) => {
         res.sendFile(path.resolve(`${__dirname}/../user-info/ProfileImage.png`))
     })
 
@@ -68,6 +64,12 @@ function serve() {
     })
 
     app.post('/api/players/v1/list', (req, res) => {
+        res.send("[]")
+    })
++
+    /*TODO: Make this actually upload as the profile image*/
+
+    app.post('/api/images/v2/profile', (req, res) => {
         res.send("[]")
     })
 

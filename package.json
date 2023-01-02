@@ -1,7 +1,10 @@
 {
   "name": "recnetjs",
   "version": "0.1.0",
-  "dev": {"is_dev": true, "suffix": "-dev"},
+  "dev": {
+    "is_dev": true,
+    "suffix": "-dev"
+  },
   "description": "A RecNet server replacement for old Rec Room builds",
   "main": "index.js",
   "scripts": {
