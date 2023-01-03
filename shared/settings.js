@@ -2,7 +2,8 @@ const fs = require("node:fs")
 const chalk = require('chalk') // colored text
 
 async function setSettings(req) {
-    const json = await require("./decode-request.js").decodeRequest(req)
+    let json = await require("./decode-request.js").decodeRequest(req)
+    JSON.parse(json)
     if (json == "") return;
     //console.log(json)
     let currentSettings = loadSettings()

@@ -1,5 +1,5 @@
 async function decodeRequest(req){
-    let json = new Promise(function(resolve) {
+    let data = new Promise(function(resolve) {
         let body = '';
         req.setEncoding('utf8');
         req.on('data', (chunk) => {
@@ -9,11 +9,8 @@ async function decodeRequest(req){
         //Not all data will be JSON. Add a fix for this later.
         req.on('end', () => {
             try {
-                const data = JSON.parse(body);
-                // Write back something interesting to the user:
-                //console.log(`GOT STREAM "${body}"`)
-                //res.end()
-                resolve(data)
+                //const data = JSON.parse(body);
+                resolve(body)
             } catch (er) {
                 // uh oh! bad json!
                 console.log(er.message)
@@ -21,7 +18,7 @@ async function decodeRequest(req){
             }
         });
     })
-    return json;
+    return data;
 }
 
 module.exports = { decodeRequest }
