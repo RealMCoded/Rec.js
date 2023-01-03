@@ -1,5 +1,5 @@
 /*
-* TODO: Look into a better Websocket implementation instead of express. maybe ws?
+* TODO: Look into a better Websocket implementation instead of express. maybe the "ws" package?
 */
 
 const chalk = require('chalk')
