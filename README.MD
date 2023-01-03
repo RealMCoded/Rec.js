@@ -35,10 +35,18 @@ A RecNet server replacement for old Rec Room builds.
 
 This project requires [Node.js](https://nodejs.org/) to be installed before you continue.
 
+for npm:
 ```bash
 npm i # install requirements
 npm run config # edit your configuration - TBA
 npm run serve 2016 # play!
+```
+
+for yarn:
+```bash
+yarn # install requirements
+yarn run config # edit your configuration - TBA
+yarn serve 2016 # play!
 ```
 
 Config files are created by themselves.
@@ -50,7 +58,8 @@ To get this working with builds, you will need to modify them yourself.
 To start a server, run the following command
 
 ```
-npm run serve 2016
+npm run serve 2016 # NPM
+yarn serve 2016 # YARN
 ```
 
 Running `npm run serve` by itself, it will try to autostart whatever version is defined in your config.json file (default: 2016)
