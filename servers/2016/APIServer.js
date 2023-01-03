@@ -39,6 +39,10 @@ function serve() {
         res.send("[]")
     })
 
+    app.get('/api/activities/charades/v1/words', (req, res) => {
+        res.send(require("../../shared/charades.js").generateCharades())
+    })
+
     app.get('/api/config/v2', (req, res) => {
         res.send(require('../../shared/config.js').config())
     })
@@ -58,6 +62,7 @@ function serve() {
 
     app.post('/api/settings/v2/set', (req, res) => {
         //TODO: Get this to actually work.
+        //console.log(req)
         res.send("[]")
     })
 
