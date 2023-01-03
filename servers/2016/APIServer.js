@@ -62,7 +62,8 @@ function serve() {
 
     app.post('/api/settings/v2/set', (req, res) => {
         //TODO: Get this to actually work.
-        //console.log(req)
+        //right now all this does is output what the server receives from the client.
+        require("../../shared/decode-request.js").decodeRequest(req)
         res.send("[]")
     })
 
