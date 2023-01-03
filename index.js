@@ -44,6 +44,12 @@ if (!fs.existsSync('./config.json')) {
     fs.copyFileSync('./config.template.json', './config.json')
 }
 
+//check for player config
+if (!fs.existsSync('./user-info/user.json')) {
+    console.error(`${chalk.yellow('[WARN]')} ./user-info/user.json does not exist! Creating...\n`)
+    fs.copyFileSync('./user-info/user.template.json', './user-info/user.json')
+}
+
 switch(cmd){
     case "serve": {
         require("./src/serve.js").run(process.argv[3])
