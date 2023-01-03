@@ -8,7 +8,8 @@
   "description": "A RecNet server replacement for old Rec Room builds",
   "main": "index.js",
   "scripts": {
-    "serve": "node index.js",
+    "serve": "node index.js serve",
+    "config": "node index.js config",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

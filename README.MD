@@ -41,6 +41,8 @@ npm run config # edit your configuration - TBA
 npm run serve 2016 # play!
 ```
 
+Config files are created by themselves.
+
 To get this working with builds, you will need to modify them yourself.
 
 # Usage
