@@ -6,6 +6,7 @@ const tryText = "Example Usage: \'npm run serve 2016\'."
 const child_process = require('child_process')
 
 //Yellow Rec Room logo
+process.title = "RecNet.js"
 console.log(`
 [49m [38;5;185;49m▄▄[48;5;185m                                     [38;5;185;49m▄▄[49m [m
 [38;5;185;49m▄[48;5;185m    [49;38;5;185m▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀[48;5;185m    [38;5;185;48;5;185m▄[m
