@@ -52,7 +52,7 @@ function serve() {
     })
 
     app.get('/api/settings/v2', (req, res) => {
-        res.send(JSON.stringify([{"Key":"MOD_BLOCKED_TIME","Value":"0"},{"Key":"MOD_BLOCKED_DURATION","Value":"0"},{"Key":"PlayerSessionCount","Value":"0"},{"Key":"ShowRoomCenter","Value":"1"},{"Key":"QualitySettings","Value":"3"},{"Key":"Recroom.OOBE","Value":"100"},{"Key":"VoiceFilter","Value":"0"},{"Key":"VIGNETTED_TELEPORT_ENABLED","Value":"0"},{"Key":"CONTINUOUS_ROTATION_MODE","Value":"0"},{"Key":"ROTATION_INCREMENT","Value":"0"},{"Key":"ROTATE_IN_PLACE_ENABLED","Value":"0"},{"Key":"TeleportBuffer","Value":"0"},{"Key":"VoiceChat","Value":"1"},{"Key":"PersonalBubble","Value":"0"},{"Key":"ShowNames","Value":"1"},{"Key":"H.264 plugin","Value":"1"}]))
+        res.send(JSON.stringify(require("../../shared/settings.js").loadSettings()))
     })
 
     //POST
@@ -61,9 +61,7 @@ function serve() {
     })
 
     app.post('/api/settings/v2/set', (req, res) => {
-        //TODO: Get this to actually work.
-        //right now all this does is output what the server receives from the client.
-        require("../../shared/decode-request.js").decodeRequest(req)
+        require("../../shared/settings.js").setSettings(req)
         res.send("[]")
     })
 
