@@ -38,7 +38,7 @@ Please report any bugs you may find to stuartt#5679!\n`)
 
 //check for config
 if (!fs.existsSync('./config.json')) {
-    console.error(`${chalk.yellow('WARN:')} config.json does not exist! Creating...\n`)
+    console.error(`${chalk.yellow('[WARN]')} config.json does not exist! Creating...\n`)
     fs.copyFileSync('./config.template.json', './config.json')
 }
 
@@ -48,5 +48,5 @@ switch(cmd){
     } break;
     //case "2017": {console.error("(2017 soon)")} break;
     //case "2018": {console.error("(2018 soon)")} break;
-    default: {console.error(`${chalk.red('ERROR:')} Invalid or no command specified.\n${tryText}`)} break;
+    default: {console.error(`${chalk.red('[ERROR]')} Invalid or no command specified.\n${tryText}`)} break;
 }

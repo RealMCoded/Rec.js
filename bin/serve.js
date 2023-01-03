@@ -1,6 +1,7 @@
 const chalk = require("chalk")
-const { defaultVersion } = require("../config.json")
+const { defaultVersion, autorunBuild, buildPaths } = require("../config.json")
 const tryText = "Example Usage: \'npm run serve 2016\'."
+const child_process = require('child_process')
 
 function run(ver) {
     if (ver == undefined) {
@@ -15,7 +16,8 @@ function run(ver) {
 
     switch(ver){
         case "2016": {
-            console.error("Starting 2016")
+            console.log(`${chalk.gray("[INFO]")} Starting 2016 server...`)
+            //if (autorunBuild) {console.log(`${chalk.gray("[INFO]")} Starting 2016 client...`); child_process.execSync(buildPaths.rr2016)}
             require("../servers/2016/APIServer.js").start()
             require("../servers/WSServer.js").start()
         } break;
