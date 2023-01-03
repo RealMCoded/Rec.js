@@ -45,7 +45,7 @@ if (!fs.existsSync('./config.json')) {
 
 switch(cmd){
     case "serve": {
-        require("./bin/serve.js").run(process.argv[3])
+        require("./src/serve.js").run(process.argv[3])
     } break;
     //case "2017": {console.error("(2017 soon)")} break;
     //case "2018": {console.error("(2018 soon)")} break;
