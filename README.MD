@@ -8,7 +8,8 @@
 
 A RecNet server replacement for old Rec Room builds.
 
-## RecNet.js is..
+**RecNet.js is...**
+
 ✅ a localhostable server for single person use
 
 ✅ similar to [OpenRec](https://github.com/recroom2016/OpenRec) 
@@ -17,21 +18,30 @@ A RecNet server replacement for old Rec Room builds.
 
 ✅ fast, small, and portable (~500kb base download, ~3MB after package download)
 
-## RecNet.js is not...
+**RecNet.js is not...**
+
 ❌ a server that multiple people can connect to
 
 ❌ similar to OpenRec Live / OpenLabs
 
 ❌ slow and bloated
 
-**Current supported builds**
-- 2016 (Tested with December 23rd 2016)
+## Build support list
 
-**Planned builds**
-- 2017
-- 2018
+| Year | Supported | Tested Builds      | Notes                                             |
+|------|-----------|--------------------|---------------------------------------------------|
+| 2016 | ✅         | December 23rd 2016 |                                                   |
+| 2017 | ❌         |                    |                                                   |
+| 2018 | ❌         |                    |                                                   |
+| 2019 | ❌         |                    | Support for this might never be officially added. |
+| 2020 | ❌         |                    | Support for this might never be officially added. |
+| 2021 | ❌         |                    | Support for this might never be officially added. |
+| 2022 | ❌         |                    | Support for this might never be officially added. |
+| 2023 | ❌         |                    | Support for this might never be officially added. |
 
-# Building
+## Building
+
+**This step is required to use this program.**
 
 This project requires [Node.js](https://nodejs.org/) to be installed before you continue.
 
@@ -53,7 +63,7 @@ Config files are created by themselves.
 
 To get this working with builds, you will need to modify them yourself.
 
-# Usage
+## Usage
 
 To start a server, run the following command
 
