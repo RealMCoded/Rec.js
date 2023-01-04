@@ -3,9 +3,8 @@ const chalk = require('chalk') // colored text
 
 async function setSettings(req) {
     let json = await require("./decode-request.js").decodeRequest(req)
-    JSON.parse(json)
+    json = JSON.parse(json)
     if (json == "") return;
-    //console.log(json)
     let currentSettings = loadSettings()
     for(const element of currentSettings){
         if (element.Key == json.Key){
