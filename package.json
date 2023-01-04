@@ -20,6 +20,7 @@
     "chalk-table": "^1.0.2",
     "express": "^4.18.2",
     "express-ws": "^5.0.2",
+    "inquirer": "^8.0.0",
     "morgan": "^1.10.0"
   },
   "repository": {
