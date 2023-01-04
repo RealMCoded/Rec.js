@@ -1,10 +1,10 @@
 ## Notice: at the current moment, RecNet.js is still in it's early stages of life. It is not recommend that you use this as your main server software.
 
 <div align="center">
-<img src="./logo/coach-only.png" width="128px" height="140px" alt="A yellow Rec Room logo with the letters JS in the bottom right corner.">
-
-# RecNet.js
+<img src="./logo/LogoText.png" alt="A yellow Rec Room logo with text saying "RecNet.js".">
 </div>
+
+## About RecNet.js
 
 A RecNet server replacement for old Rec Room builds.
 
