@@ -68,6 +68,11 @@ function serve() {
         res.send("[]")
     })
 
+    app.post('/api/avatar/v2/set', (req, res) => {
+        require("../../shared/avatar.js").saveAvatar(req)
+        res.send("[]")
+    })
+
     app.post('/api/players/v1/list', (req, res) => {
         res.send("[]")
     })
