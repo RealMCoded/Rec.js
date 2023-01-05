@@ -7,7 +7,7 @@ app.use(morgan(`${chalk.green("[API]")} :method ":url" :status - :response-time 
 
 let port;
 
-function start(serveport = 2016){
+function start(serveport = 2017){
     try {
         port = serveport
         serve()
@@ -30,6 +30,10 @@ function serve() {
 
     app.get('/api/images/v1/profile/*', (req, res) => {
         res.sendFile(path.resolve(`${__dirname}/../../user-info/ProfileImage.png`))
+    })
+
+    app.get('/api/players/v1/*', (req, res) => {
+        res.send(require("../../shared/getorcreate.js").GetOrCreate())
     })
 
     app.get('/api/avatar/v3/items', (req, res) => {
@@ -56,11 +60,23 @@ function serve() {
         res.send(JSON.stringify(require("../../shared/settings.js").loadSettings()))
     })
 
+    app.get('/api/PlayerReporting/v1/moderationBlockDetails', (req, res) => {
+        res.send("{\"ReportCategory\":0,\"Duration\":0,\"GameSessionId\":0,\"Message\":\"\"}")
+    })
+
+    app.get('/api/config/v1/amplitude', (req, res) => {
+        res.send(JSON.stringify({AmplitudeKey: "NoKeyProvided"}))
+    })
+
     /*
         POST REQUESTS
     */
-    app.post('/api/players/v1/getorcreate', (req, res) => {
-        res.send(require("../../shared/getorcreate.js").GetOrCreate())
+    app.post('/api/platformlogin/v1/profiles', (req, res) => {
+        res.send(require("../../shared/getorcreate.js").GetOrCreateArray())
+    })
+
+    app.post('/api/platformlogin/v6/', (req, res) => {
+        res.send(JSON.stringify({Token:"j3923mHJG032jew", PlayerId:"25565", Error:""}))
     })
 
     app.post('/api/settings/v2/set', (req, res) => {

@@ -28,7 +28,7 @@ function serve() {
         });
     })
 
-    app.ws('/api/notification/v2', function(ws, req) {
+    app.ws('/api/notification/*', function(ws, req) {
         //TODO: Get this to actually work.
         ws.send(`[]`);
     })
