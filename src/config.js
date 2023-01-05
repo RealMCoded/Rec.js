@@ -18,7 +18,7 @@ function saveExit(){
     fs.writeFileSync("./user-info/user.json", JSON.stringify(player))
     console.log("Wrote player config to file.")
     console.log("Wrote server config to file.")
-    console.log("\n👋 Bye!")
+    console.log("👋 Bye!")
     process.exit(0)
 }
 
