@@ -37,7 +37,7 @@ console.log(`
 console.log(chalk.yellow(`\nRecNet.js Version ${version}${(dev.is_dev == true ? dev.suffix : "")} (commit ${child_process.execSync('git rev-parse HEAD').toString().substring(0, 7)})`))
 if (dev.is_dev == true) console.log(`${chalk.red(`\n⚠️WARNING⚠️`)}\nThis is a pre-release version of RecNet.js.
 This version contains unfinished and untested code that may result in crashes.
-Please report any bugs you may find to stuartt#5679!\n`)
+Please report any bugs you may find to the github repo! https://github.com/RealMCoded/RecNet.js/issues \n`)
 
 //check for config
 if (!fs.existsSync('./config.json')) {
