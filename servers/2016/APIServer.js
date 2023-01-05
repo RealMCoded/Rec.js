@@ -49,7 +49,7 @@ function serve() {
     })
 
     app.get('/api/avatar/v2', (req, res) => {
-        res.send(JSON.stringify(require("../../shared/avatar.js").loadAvatar()))
+        res.send(JSON.stringify(require("../../shared/avatar.js").loadAvatar(2016)))
     })
 
     app.get('/api/settings/v2', (req, res) => {
@@ -69,7 +69,7 @@ function serve() {
     })
 
     app.post('/api/avatar/v2/set', (req, res) => {
-        require("../../shared/avatar.js").saveAvatar(req)
+        require("../../shared/avatar.js").saveAvatar(req, 2016)
         res.send("[]")
     })
 
