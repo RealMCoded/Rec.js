@@ -53,7 +53,7 @@ function serve() {
     })
 
     app.get('/api/avatar/v2', (req, res) => {
-        res.send(JSON.stringify(require("../../shared/avatar.js").loadAvatar()))
+        res.send(JSON.stringify(require("../../shared/avatar.js").loadAvatar(2017)))
     })
 
     app.get('/api/settings/v2', (req, res) => {
@@ -66,6 +66,26 @@ function serve() {
 
     app.get('/api/config/v1/amplitude', (req, res) => {
         res.send(JSON.stringify({AmplitudeKey: "NoKeyProvided"}))
+    })
+
+    app.get('/api/relationships/v2/get', (req, res) => {
+        res.send("[]")
+    })
+
+    app.get('/api/messages/v2/get', (req, res) => {
+        res.send("[]")
+    })
+
+    app.get('/api/equipment/v1/getUnlocked', (req, res) => {
+        res.send(require("../../shared/equipment.js").getequipment())
+    })
+
+    app.get('/api/events/v3/list', (req, res) => {
+        res.send("[]")
+    })
+
+    app.get('/api/challenge/v1/getCurrent', (req, res) => {
+        res.send("{\"Success\":true,\"Message\":\"YIPEE\"}")
     })
 
     /*
@@ -85,7 +105,7 @@ function serve() {
     })
 
     app.post('/api/avatar/v2/set', (req, res) => {
-        require("../../shared/avatar.js").saveAvatar(req)
+        require("../../shared/avatar.js").saveAvatar(req, 2017)
         res.send("[]")
     })
 
@@ -103,6 +123,11 @@ function serve() {
     app.post('/api/presence/v2/', (req, res) => {
         //TODO: Get this to actually work.
         res.send("[]")
+    })
+
+    app.post('/api/gamesessions/v2/joinrandom', (req, res) => {
+        //TODO: Get this to actually work.
+        res.send(require("../../shared/joinRandom.js").joinRandom(req))
     })
     
     app.listen(port, () => {
