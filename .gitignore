@@ -5,3 +5,5 @@ servers/test
 user-info/user.json
 config.json
 yarn.lock
+images/*
+!images/.gitkeep
