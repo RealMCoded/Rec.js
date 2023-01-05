@@ -17,9 +17,9 @@ function serve() {
     
     wss.on('connection', function connection(ws) {
         ws.on('message', function message(data) {
-            console.log(`${chalk.blueBright("[WS]")} received: ${data}`);
+            console.log(`${chalk.blueBright("[WS]")} Data received: ${data}`);
             let thing = processRequest(data)
-            console.log(thing)
+            console.log(`${chalk.blueBright("[WS]")} Data sent: ${thing}`)
             ws.send(thing)
         });
     });
@@ -33,7 +33,7 @@ function processRequest(data){
 
     if (data.api != undefined) {
         if (data.api == "playerSubscriptions/v1/update"){
-            console.log("set presence lolol")
+            console.log(`${chalk.blueBright("[WS]")} Presence update called!`)
             return JSON.stringify({
                 Id: 12, 
                 Msg: {
