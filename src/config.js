@@ -1,6 +1,6 @@
 const chalk = require("chalk")
 const inquirer = require("inquirer")
-const fs = require("node:fs")
+const fs = require("node:fs");
 
 let player, server;
 
@@ -9,14 +9,16 @@ async function run() {
 
     player = JSON.parse(fs.readFileSync("./user-info/user.json"))
 
-    //server = JSON.parse(fs.readFileSync("./config.json"))
+    server = JSON.parse(fs.readFileSync("./config.json"))
 
     mainMenu()
 }
 
 function saveExit(){
     fs.writeFileSync("./user-info/user.json", JSON.stringify(player))
-    console.log("Wrote player config to file.\n👋 Bye!")
+    console.log("Wrote player config to file.")
+    console.log("Wrote server config to file.")
+    console.log("\n👋 Bye!")
     process.exit(0)
 }
 
@@ -39,7 +41,7 @@ async function mainMenu(){
 
     switch(answers.options_main){
         case "Edit user settings": {return menu_user()} break;
-        case "Edit server settings": {console.log("Will be added later!"); return mainMenu()} break;
+        case "Edit server settings": {return menu_server()} break;
         case "Save and exit": {return saveExit()} break;
         case "Exit without saving": {return console.log("\n👋 Bye!")} break;
     }
@@ -72,13 +74,51 @@ async function menu_server(){
         type: 'list',
         message: 'Edit server settings',
         choices: [
+          `Default build to launch`,
+          `Toggle private rooms`,
+          `Toggle developer info`,
           'Back'
         ],
     });
 
-    switch(answers.options_user){
+    switch(answers.options_server){
+        case "Default build to launch": {return set_autolaunch()} break;
+        case "Toggle private rooms": {return toggle_private()} break;
+        case "Toggle developer mode": {return toggle_dev()} break;
         case "Back": {return mainMenu()} break;
     }
+}
+
+async function set_autolaunch(){
+    const answers = await inquirer.prompt({
+        name: 'options_autolaunch',
+        type: 'list',
+        message: 'Select what version you wish to auto launch',
+        choices: [
+          `2016`,
+          `2017`
+          //`2018`,
+        ],
+    });
+    
+    server.defaultVersion = answers.options_autolaunch
+    menu_server()
+}
+
+/*
+    TOGGLE OPTIONS
+*/
+
+async function toggle_private(){
+    server.privateRooms = !server.privateRooms
+    console.log(`Setting changed to ${server.privateRooms}`)
+    menu_server()
+}
+
+async function toggle_dev(){
+    server.showDevInfo = !server.showDevInfo
+    console.log(`Setting changed to ${server.showDevInfo}`)
+    menu_server()
 }
 
 /*
