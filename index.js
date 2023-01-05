@@ -2,7 +2,7 @@ const chalk = require("chalk")
 const { version, dev } = require("./package.json")
 let cmd = process.argv[2]
 const fs = require("node:fs")
-const tryText = "Example Usage: \'npm run serve 2016\'."
+const tryText = "For a list of commands, run \'node . help\'"
 const child_process = require('child_process')
 process.title = "RecNet.js"
 
@@ -59,6 +59,9 @@ switch(cmd){
     } break;
     case "config": {
         require("./src/config.js").run()
+    } break;
+    case "help": {
+        require("./src/help.js").run()
     } break;
     default: {console.error(`${chalk.red('[ERROR]')} Invalid or no command specified.\n${tryText}`)} break;
 }
