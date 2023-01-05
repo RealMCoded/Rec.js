@@ -40,7 +40,7 @@ function processRequest(data){
                     PlayerId: data.param.PlayerIds[0],
                     IsOnline: true,
                     InScreenMode: false,
-                    GameSession: null
+                    GameSession: process.session
                 }
             });
         }else if (data.api == "heartbeat2"){

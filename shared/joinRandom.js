@@ -1,9 +1,8 @@
 const { privateRooms } = require('../config.json')
 const { userid } = require('../user-info/user.json')
 
-async function joinRandom(req){
-    let json = await require("./decode-request.js").decodeRequest(req)
-    json = JSON.parse(json)
+function joinRandom(req){
+    let json = JSON.parse(req)
     var creatorID = userid
     var sessionID = 20171
 
@@ -32,7 +31,7 @@ async function joinRandom(req){
         }
     }
 
-    console.log(session)
+    //console.log(session)
 
     return JSON.stringify(session);
 }

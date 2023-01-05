@@ -126,8 +126,23 @@ function serve() {
     })
 
     app.post('/api/gamesessions/v2/joinrandom', (req, res) => {
-        //TODO: Get this to actually work.
-        res.send(require("../../shared/joinRandom.js").joinRandom(req))
+        //NOTE: I'm doing it like this because it doesn't like me doing it with an async function.
+        let body = '';
+        req.setEncoding('utf8');
+        req.on('data', (chunk) => {
+            body += chunk;
+        });
+
+        req.on('end', () => {
+            try {
+                var ses = require("../../shared/joinRandom.js").joinRandom(body)
+                process.session = ses
+                res.send(ses)
+            } catch (er) {
+                console.log(er.message)
+                return 0;
+            }
+        });
     })
     
     app.listen(port, () => {
