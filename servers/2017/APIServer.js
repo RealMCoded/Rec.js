@@ -61,7 +61,7 @@ function serve() {
     })
 
     app.get('/api/PlayerReporting/v1/moderationBlockDetails', (req, res) => {
-        res.send("{\"ReportCategory\":0,\"Duration\":0,\"GameSessionId\":0,\"Message\":\"\"}")
+        res.send(JSON.stringify({"ReportCategory":0,"Duration":0,"GameSessionId":0,"Message":""}))
     })
 
     app.get('/api/config/v1/amplitude', (req, res) => {
@@ -85,7 +85,7 @@ function serve() {
     })
 
     app.get('/api/challenge/v1/getCurrent', (req, res) => {
-        res.send("{\"Success\":true,\"Message\":\"YIPEE\"}")
+        res.send(JSON.stringify({"Success":true,"Message":"RecNet"}))
     })
 
     /*

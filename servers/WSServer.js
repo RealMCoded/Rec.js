@@ -18,10 +18,41 @@ function serve() {
     wss.on('connection', function connection(ws) {
         ws.on('message', function message(data) {
             console.log(`${chalk.blueBright("[WS]")} received: ${data}`);
-            ws.send(JSON.stringify(data))
+            let thing = processRequest(data)
+            console.log(thing)
+            ws.send(thing)
         });
     });
     console.log(`${chalk.blueBright("[WS]")} WS started on port ${port}`)
+}
+
+function processRequest(data){
+    let result;
+
+    data = JSON.parse(data)
+
+    if (data.api != undefined) {
+        if (data.api == "playerSubscriptions/v1/update"){
+            console.log("set presence lolol")
+            return JSON.stringify({
+                Id: 12, 
+                Msg: {
+                    PlayerId: data.param.PlayerIds[0],
+                    IsOnline: true,
+                    InScreenMode: false,
+                    GameSession: null
+                }
+            });
+        }else if (data.api == "heartbeat2"){
+            result = JSON.stringify(data)
+        } else {
+            result = ""
+        }
+    } else {
+        result = JSON.stringify(data)
+    }
+
+    return result;
 }
 
 module.exports = { start }
