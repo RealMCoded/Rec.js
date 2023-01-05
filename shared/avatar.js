@@ -3,7 +3,7 @@ const fs = require("node:fs")
 function loadAvatar(ver){
     let json;
     if (ver == 2016) json = JSON.parse(fs.readFileSync("./user-info/user.json")).avatar2016; else json = JSON.parse(fs.readFileSync("./user-info/user.json")).avatar2017;
-    console.log(json)
+    //console.log(json)
     return json
 }  
 
