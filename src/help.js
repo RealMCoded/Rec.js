@@ -3,14 +3,14 @@ const chalk = require("chalk")
 function run(){
     console.log(`${chalk.yellow(`RecNet.js Help`)}
     
-Usage: npm run [command] 
+Usage:  npm run [command] 
         yarn run [command]
         node . [command]
 
 Example: npm run serve 2016
-        yarn run serve 2016
-        yarn serve 2016
-        node . serve 2016
+         yarn run serve 2016
+         yarn serve 2016
+         node . serve 2016
     
 Valid commands:
 
