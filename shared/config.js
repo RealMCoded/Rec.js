@@ -1,4 +1,5 @@
 const { version, dev } = require("../package.json")
+const child_process = require("child_process")
 
 function config(){
     let commit;

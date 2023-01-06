@@ -36,8 +36,8 @@ console.log(`
 //other welcome code
 let commit;
 try {commit = child_process.execSync('git rev-parse HEAD').toString().substring(0, 7)} catch(e) {commit = "git not installed :("}
-console.log(chalk.yellow(`\nRecNet.js Version ${version}${(dev.is_dev == true ? dev.suffix : "")} (commit ${commit})`))
-if (dev.is_dev == true) console.log(`${chalk.red(`\n⚠️WARNING⚠️`)}\nThis is a pre-release version of RecNet.js.
+console.log(chalk.yellow(`\nRecNet.js Version ${version}${(dev.is_dev == true ? dev.suffix : "")} (commit ${commit})\n`))
+if (dev.is_dev == true) console.log(`${chalk.red(`⚠️WARNING⚠️`)}\nThis is a pre-release version of RecNet.js.
 This version contains unfinished and untested code that may result in crashes.
 Please report any bugs you may find to the github repo! https://github.com/RealMCoded/RecNet.js/issues \n`)
 
