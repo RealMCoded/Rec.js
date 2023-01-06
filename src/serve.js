@@ -5,12 +5,12 @@ const tryText = "Example Usage: \'npm run serve 2016\'."
 
 function run(ver) {
     if (ver == undefined) {
-        console.error(`${chalk.yellow('WARN:')} No version specified! Defaulting to version set in config.json...`)
+        console.error(`${chalk.gray("[INFO]")} No version specified! Defaulting to version set in config.json...`)
         switch (defaultVersion) {
             case "2016": {ver = "2016";} break;
             case "2017": {ver = "2017";} break;
             case "2018": {ver = "2018";} break;
-            default: {return console.error(`${chalk.red('ERROR:')} Invalid version specified in config.json. Expected "2016". Got "${defaultVersion}".`)} break;
+            default: {return console.error(`${chalk.red('[ERROR]')} Invalid version specified in config.json. Expected "2016". Got "${defaultVersion}".`)} break;
         }
     }
 
@@ -23,12 +23,13 @@ function run(ver) {
         } break;
         case "2017": {
             console.log(`${chalk.gray("[INFO]")} Starting 2017 server...`)
+            console.log(`${chalk.yellow("[WARN]")} 2017 support is still not fully finished! Expect some things to fail when using this!`)
             //if (autorunBuild) {console.log(`${chalk.gray("[INFO]")} Starting 2017 client...`); child_process.execSync(buildPaths.rr2017)}
             require("../servers/2017/APIServer.js").start()
             require("../servers/WSServer.js").start()
         } break;
         //case "2018": {console.error("(2018 soon)")} break;
-        default: {console.error(`${chalk.red('ERROR:')} Invalid version specified.\n${tryText}`)} break;
+        default: {console.error(`${chalk.red('[ERROR]')} Invalid version specified.\n${tryText}`)} break;
     }
 }
 
