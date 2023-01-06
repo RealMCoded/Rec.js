@@ -86,7 +86,7 @@ function serve() {
     })
 
     app.get('/api/challenge/v1/getCurrent', (req, res) => {
-        res.send(JSON.stringify({"Success":true,"Message":"RecNet.js"}))
+        res.send(JSON.stringify({"Success":true,"Message":"Rec.js"}))
     })
 
     app.get('/api/images/v1/named', (req, res) => {

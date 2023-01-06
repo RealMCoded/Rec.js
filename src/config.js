@@ -10,7 +10,7 @@ let pfpSettings = {
 };
 
 async function run() {
-    console.log(`${chalk.yellow("RecNet.js Config Utility")}`)
+    console.log(`${chalk.yellow("Rec.js Config Utility")}`)
     player = JSON.parse(fs.readFileSync("./user-info/user.json"))
     server = JSON.parse(fs.readFileSync("./config.json"))
     mainMenu()

@@ -1,12 +1,14 @@
+# RecNet.js is now Rec.js! Same software, new name!
+
 <div align="center">
 <img src="./logo/LogoText.png" alt="A yellow Rec Room logo with text saying 'RecNet.js'.">
 </div>
 
-## About RecNet.js
+## About Rec.js
 
 RecNet.js is RecNet server replacement for old Rec Room builds.
 
-**RecNet.js is...**
+**Rec.js is...**
 
 ✅ a localhostable server for single person use ([It is possible to play with others however!](#q-is-it-possible-to-play-with-other-people-with-recnetjs))
 
@@ -16,7 +18,7 @@ RecNet.js is RecNet server replacement for old Rec Room builds.
 
 ✅ fast, small, and portable (~500kb base download, ~3MB after package download)
 
-**RecNet.js is not...**
+**Rec.js is not...**
 
 ❌ a server that multiple people can connect to
 
@@ -65,13 +67,13 @@ If you run this command without specifying what version you wish to launch, it w
 
 ## (not so) Frequently Asked Questions
 
-### Q: How is RecNet.js different than OpenRec?
+### Q: How is Rec.js different than OpenRec?
 
-**A:** At the moment, there's not much of a difference between OpenRec and RecNet.js. They both do the same job, which is allowing old Rec Room builds to be playable again.
+**A:** At the moment, there's not much of a difference between OpenRec and Rec.js. They both do the same job, which is allowing old Rec Room builds to be playable again.
 
-Since recroom2016 no longer wishes to work on OpenRec (because of OpenLabs), RecNet.js exists to be an improvement/recreation of OpenRec to include more features and better support.
+Since recroom2016 no longer wishes to work on OpenRec (because of OpenLabs), Rec.js exists to be an improvement/recreation of OpenRec to include more features and better support.
 
-### Q: Is it possible to play with other people with RecNet.js?
+### Q: Is it possible to play with other people with Rec.js?
 
 **A:** Yes! Multiplayer is handled with a [Photon PUN server](https://www.photonengine.com/pun) and a [Photon Voice server](https://www.photonengine.com/en-us/Voice), not via the RecNet server.
 
