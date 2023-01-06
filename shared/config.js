@@ -3,7 +3,7 @@ const child_process = require("child_process")
 
 function config(){
     let commit;
-    try {commit = child_process.execSync('git rev-parse HEAD').toString().substring(0, 7)} catch(e) {commit = "git not installed :("}
+    try {commit = child_process.execSync('git rev-parse HEAD').toString().substring(0, 7)} catch(e) {commit = "[git not installed]"}
     return JSON.stringify({
         MessageOfTheDay: `RecNet.js Version ${version}${(dev.is_dev == true ? dev.suffix : "")} (commit ${commit})`,
         CdnBaseUri: "http://localhost:20182/",
