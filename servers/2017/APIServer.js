@@ -89,6 +89,10 @@ function serve() {
         res.send(JSON.stringify({"Success":true,"Message":"RecNet.js"}))
     })
 
+    app.get('/api/images/v1/named', (req, res) => {
+        res.send("[{\"FriendlyImageName\":\"DormRoomBucket\",\"ImageName\":\"DormRoomBucket\",\"StartTime\":\"2021-12-27T21:27:38.1880175-08:00\",\"EndTime\":\"2025-12-27T21:27:38.1880399-08:00\"}")
+    })
+
     /*
         POST REQUESTS
     */
@@ -115,7 +119,7 @@ function serve() {
         res.send("[]")
     })
 
-    app.post('/api/images/v2/profile', (req, res) => {
+    app.post('/api/images/v3/profile', (req, res) => {
         /*TODO: Make this actually upload as the profile image*/
         console.log(`${chalk.green("[API]")} ${chalk.yellow("[WARN]")} Image saving is bugged at the moment.`) //placeholder until i get it working
         require("../../shared/profile.js").setPFP(req)
