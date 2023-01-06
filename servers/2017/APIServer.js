@@ -137,7 +137,28 @@ function serve() {
 
         req.on('end', () => {
             try {
-                var ses = require("../../shared/joinRandom.js").joinRandom(body)
+                var ses = require("../../shared/sessions.js").joinRandom(body)
+                process.session = ses //this makes it so i can share the variable later with the web socket.
+                res.send(ses)
+            } catch (er) {
+                console.log(er.message)
+                return 0;
+            }
+        });
+    })
+
+    app.post('/api/gamesessions/v2/create', (req, res) => {
+        //NOTE: I'm doing it like this because it doesn't like me doing it with an async function.
+        let body = '';
+        req.setEncoding('utf8');
+        req.on('data', (chunk) => {
+            body += chunk;
+        });
+
+        req.on('end', () => {
+            try {
+                console.log(body)
+                var ses = require("../../shared/sessions.js").create(body)
                 process.session = ses //this makes it so i can share the variable later with the web socket.
                 res.send(ses)
             } catch (er) {
