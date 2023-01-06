@@ -51,6 +51,10 @@ if (!fs.existsSync('./config.json')) {
 if (!fs.existsSync('./user-info/user.json')) {
     console.error(`${chalk.yellow('[WARN]')} ./user-info/user.json does not exist! Creating...\n`)
     fs.copyFileSync('./user-info/user.template.json', './user-info/user.json')
+    //Randomize UserID
+    let plrjson = JSON.parse(fs.readFileSync("./user-info/user.json"))
+    plrjson.userid = Math.floor(Math.random() * 999999)
+    fs.writeFileSync("./user-info/user.json", JSON.stringify(plrjson))
 }
 
 switch(cmd){
