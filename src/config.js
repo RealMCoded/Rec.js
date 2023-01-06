@@ -4,20 +4,30 @@ const fs = require("node:fs");
 
 let player, server;
 
+let pfpSettings = {
+    change: false,
+    location: ""
+};
+
 async function run() {
     console.log(`${chalk.yellow("RecNet.js Config Utility")}`)
-
     player = JSON.parse(fs.readFileSync("./user-info/user.json"))
-
     server = JSON.parse(fs.readFileSync("./config.json"))
-
     mainMenu()
 }
 
 function saveExit(){
     fs.writeFileSync("./user-info/user.json", JSON.stringify(player))
-    console.log("Wrote player config to file.")
-    console.log("Wrote server config to file.")
+    console.log("✅ Wrote player config to file.")
+    console.log("✅ Wrote server config to file.")
+    if (pfpSettings.change) {
+        try {
+            fs.copyFileSync(pfpSettings.location, "./user-info/ProfileImage.png")
+            console.log("✅ Profile image changed.")
+        } catch(e) {
+            console.log(`❌ Error changing profile image. ${e.message}`)
+        }
+    }
     console.log("👋 Bye!")
     process.exit(0)
 }
@@ -56,6 +66,7 @@ async function menu_user(){
           'Change username',
           'Change token amount',
           'Change level',
+          'Change profile image',
           'Back'
         ],
     });
@@ -64,6 +75,7 @@ async function menu_user(){
         case "Change username": {return set_name()} break;
         case "Change token amount": {return set_token()} break;
         case "Change level": {return set_level()} break;
+        case "Change profile image": {return set_img()} break;
         case "Back": {return mainMenu()} break;
     }
 }
@@ -84,7 +96,7 @@ async function menu_server(){
     switch(answers.options_server){
         case "Default build to launch": {return set_autolaunch()} break;
         case "Toggle private rooms": {return toggle_private()} break;
-        case "Toggle developer mode": {return toggle_dev()} break;
+        case "Toggle developer info": {return toggle_dev()} break;
         case "Back": {return mainMenu()} break;
     }
 }
@@ -165,6 +177,31 @@ async function set_level(){
     });
     
     player.level = parseInt(answers.level);
+    menu_user()
+}
+
+async function set_img(){
+    console.log(`
+    ⚠️Before you change your profile picture:⚠️
+    - You can only use images that are on your computer. Images from the internet will throw an error!
+    - All images must be in the "png" format.
+    - You can drag and drop an image to get it's location automatically.
+    - Enter nothing to abort this change.
+    `)
+    const answers = await inquirer.prompt({
+        name: 'pfp',
+        type: 'input',
+        message: 'Enter the new location of your profile image:'
+    });
+    
+    if (answers.pfp != "") {
+        if (!answers.pfp.endsWith(".png")) {
+            console.log("❌ Your image is not a PNG!")
+        } else {
+            pfpSettings.change = true
+            pfpSettings.location = answers.pfp
+        }
+    } else {console.log("❌ No image provided. Profile picture will not be changed.")}
     menu_user()
 }
 
