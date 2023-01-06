@@ -4,6 +4,7 @@ const morgan = require('morgan') //for webserver output
 const app = express()
 const path = require("path")
 app.use(morgan(`${chalk.green("[API]")} :method ":url" :status - :response-time ms`))
+const { userid } = require('../../user-info/user.json')
 
 let port;
 
@@ -85,7 +86,7 @@ function serve() {
     })
 
     app.get('/api/challenge/v1/getCurrent', (req, res) => {
-        res.send(JSON.stringify({"Success":true,"Message":"RecNet"}))
+        res.send(JSON.stringify({"Success":true,"Message":"RecNet.js"}))
     })
 
     /*
@@ -96,7 +97,8 @@ function serve() {
     })
 
     app.post('/api/platformlogin/v6/', (req, res) => {
-        res.send(JSON.stringify({Token:"j3923mHJG032jew", PlayerId:"25565", Error:""}))
+        let uid = userid.toString()
+        res.send(JSON.stringify({Token:Buffer.from(uid).toString('base64'), PlayerId:uid, Error:""}))
     })
 
     app.post('/api/settings/v2/set', (req, res) => {
@@ -136,7 +138,7 @@ function serve() {
         req.on('end', () => {
             try {
                 var ses = require("../../shared/joinRandom.js").joinRandom(body)
-                process.session = ses
+                process.session = ses //this makes it so i can share the variable later with the web socket.
                 res.send(ses)
             } catch (er) {
                 console.log(er.message)
