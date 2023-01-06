@@ -1,12 +1,12 @@
 # RecNet.js is now Rec.js! Same software, new name!
 
 <div align="center">
-<img src="./logo/LogoText.png" alt="A yellow Rec Room logo with text saying 'RecNet.js'.">
+<img src="./logo/LogoText.png" alt="A yellow Rec Room logo with text saying 'Rec.js'.">
 </div>
 
 ## About Rec.js
 
-RecNet.js is RecNet server replacement for old Rec Room builds.
+Rec.js is RecNet server replacement for old Rec Room builds.
 
 **Rec.js is...**
 
