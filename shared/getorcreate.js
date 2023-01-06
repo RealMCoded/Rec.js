@@ -5,7 +5,7 @@ function GetOrCreate() {
         "Id": userid,
         "Username": username,
         "DisplayName": username,
-        "XP": 87,
+        "XP": 21,
         "Level": level,
         "Reputation": 0,
         "Verified": true,
@@ -13,8 +13,31 @@ function GetOrCreate() {
         "HasEmail": true,
         "CanReceiveInvites": false,
         "ProfileImageName": username,
+        "JuniorProfile": false,
+        "ForceJuniorImages": false,
+        "PendingJunior":false,
         "HasBirthday": true
     })
 }
 
-module.exports = { GetOrCreate }
+function GetOrCreateArray() {
+    return JSON.stringify([{
+        "Id": userid,
+        "Username": username,
+        "DisplayName": username,
+        "XP": 21,
+        "Level": level,
+        "Reputation": 0,
+        "Verified": true,
+        "Developer": true,
+        "HasEmail": true,
+        "CanReceiveInvites": false,
+        "ProfileImageName": username,
+        "JuniorProfile": false,
+        "ForceJuniorImages": false,
+        "PendingJunior":false,
+        "HasBirthday": true
+    }])
+}
+
+module.exports = { GetOrCreate, GetOrCreateArray }

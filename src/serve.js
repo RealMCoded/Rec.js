@@ -1,7 +1,7 @@
 const chalk = require("chalk")
 const { defaultVersion, autorunBuild, buildPaths } = require("../config.json")
 const tryText = "Example Usage: \'npm run serve 2016\'."
-const child_process = require('child_process')
+
 
 function run(ver) {
     if (ver == undefined) {
@@ -21,7 +21,12 @@ function run(ver) {
             require("../servers/2016/APIServer.js").start()
             require("../servers/WSServer.js").start()
         } break;
-        //case "2017": {console.error("(2017 soon)")} break;
+        case "2017": {
+            console.log(`${chalk.gray("[INFO]")} Starting 2017 server...`)
+            //if (autorunBuild) {console.log(`${chalk.gray("[INFO]")} Starting 2017 client...`); child_process.execSync(buildPaths.rr2017)}
+            require("../servers/2017/APIServer.js").start()
+            require("../servers/WSServer.js").start()
+        } break;
         //case "2018": {console.error("(2018 soon)")} break;
         default: {console.error(`${chalk.red('ERROR:')} Invalid version specified.\n${tryText}`)} break;
     }
