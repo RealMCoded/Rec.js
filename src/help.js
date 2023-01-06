@@ -17,9 +17,10 @@ Valid commands:
     help                    Displays help information
                             NOTE: running "yarn help" will not run this.
 
-    serve [version]         Start the server for the version specified. 
+    serve [version] <port>  Start the server for the version specified. 
                             If version is undefined, it will run the defaultVersion in config.json. 
-                            Example: serve 2016
+                            The port is optional. It defaults to the year of the version you are running.
+                            Example: serve 2016, serve 2016 8080
 
     config                  Edit your user and server configuration. 
                             NOTE: running "yarn config" will not run this.

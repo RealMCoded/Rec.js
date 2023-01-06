@@ -3,7 +3,7 @@ const { defaultVersion, autorunBuild, buildPaths } = require("../config.json")
 const tryText = "Example Usage: \'npm run serve 2016\'."
 
 
-function run(ver) {
+function run(ver, port) {
     if (ver == undefined) {
         console.error(`${chalk.gray("[INFO]")} No version specified! Defaulting to version set in config.json...`)
         switch (defaultVersion) {
@@ -18,14 +18,14 @@ function run(ver) {
         case "2016": {
             console.log(`${chalk.gray("[INFO]")} Starting 2016 server...`)
             //if (autorunBuild) {console.log(`${chalk.gray("[INFO]")} Starting 2016 client...`); child_process.execSync(buildPaths.rr2016)}
-            require("../servers/2016/APIServer.js").start()
+            require("../servers/2016/APIServer.js").start(port)
             require("../servers/WSServer.js").start()
         } break;
         case "2017": {
             console.log(`${chalk.gray("[INFO]")} Starting 2017 server...`)
             console.log(`${chalk.yellow("[WARN]")} 2017 support is still not fully finished! Expect some things to fail when using this!`)
             //if (autorunBuild) {console.log(`${chalk.gray("[INFO]")} Starting 2017 client...`); child_process.execSync(buildPaths.rr2017)}
-            require("../servers/2017/APIServer.js").start()
+            require("../servers/2017/APIServer.js").start(port)
             require("../servers/WSServer.js").start()
         } break;
         //case "2018": {console.error("(2018 soon)")} break;

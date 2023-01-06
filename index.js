@@ -55,7 +55,7 @@ if (!fs.existsSync('./user-info/user.json')) {
 
 switch(cmd){
     case "serve": {
-        require("./src/serve.js").run(process.argv[3])
+        require("./src/serve.js").run(process.argv[3], process.argv[4])
     } break;
     case "config": {
         require("./src/config.js").run()

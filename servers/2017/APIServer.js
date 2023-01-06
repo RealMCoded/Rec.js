@@ -8,9 +8,9 @@ const { userid } = require('../../user-info/user.json')
 
 let port;
 
-function start(serveport = 2017){
+function start(serveport){
     try {
-        port = serveport
+        port = serveport ?? 2017
         serve()
     } catch(e) {
         console.error(e)

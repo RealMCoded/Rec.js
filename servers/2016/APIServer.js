@@ -7,9 +7,9 @@ app.use(morgan(`${chalk.green("[API]")} :method ":url" :status - :response-time 
 
 let port;
 
-function start(serveport = 2016){
+function start(serveport){
     try {
-        port = serveport
+        port = serveport ?? 2016
         serve()
     } catch(e) {
         console.error(e)
