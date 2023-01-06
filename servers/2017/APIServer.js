@@ -111,7 +111,7 @@ function serve() {
     })
 
     app.post('/api/avatar/v2/set', (req, res) => {
-        require("../../shared/avatar.js").saveAvatar(req, 2017)
+        require("../../shared/avatar.js").saveAvatar(req, "2017")
         res.send("[]")
     })
 
@@ -141,7 +141,7 @@ function serve() {
 
         req.on('end', () => {
             try {
-                var ses = require("../../shared/sessions.js").joinRandom(body)
+                var ses = require("../../shared/sessions.js").joinRandom(body, "2017")
                 process.session = ses //this makes it so i can share the variable later with the web socket.
                 res.send(ses)
             } catch (er) {
