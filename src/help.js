@@ -1,7 +1,7 @@
 const chalk = require("chalk")
 
 function run(){
-    console.log(`${chalk.yellow(`RecNet.js Help`)}
+    console.log(`${chalk.yellow(`Rec.js Help`)}
     
 Usage:  npm run [command] 
         yarn run [command]

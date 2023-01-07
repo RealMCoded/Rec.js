@@ -4,7 +4,7 @@ let cmd = process.argv[2]
 const fs = require("node:fs")
 const tryText = "For a list of commands, run \'node . help\'"
 const child_process = require('child_process')
-process.title = "RecNet.js"
+process.title = "Rec.js"
 
 //Print logo
 console.log(`
@@ -36,10 +36,10 @@ console.log(`
 //other welcome code
 let commit;
 try {commit = child_process.execSync('git rev-parse HEAD').toString().substring(0, 7)} catch(e) {commit = "[git not installed]"}
-console.log(chalk.yellow(`\nRecNet.js Version ${version}${(dev.is_dev == true ? dev.suffix : "")} (commit ${commit})\n`))
-if (dev.is_dev == true) console.log(`${chalk.red(`⚠️WARNING⚠️`)}\nThis is a pre-release version of RecNet.js.
+console.log(chalk.yellow(`\nRec.js Version ${version}${(dev.is_dev == true ? dev.suffix : "")} (commit ${commit})\n`))
+if (dev.is_dev == true) console.log(`${chalk.red(`⚠️WARNING⚠️`)}\nThis is a pre-release version of Rec.js.
 This version contains unfinished and untested code that may result in crashes.
-Please report any bugs you may find to the github repo! https://github.com/RealMCoded/RecNet.js/issues \n`)
+Please report any bugs you may find to the github repo! https://github.com/RealMCoded/Rec.js/issues \n`)
 
 //check for config
 if (!fs.existsSync('./config.json')) {
