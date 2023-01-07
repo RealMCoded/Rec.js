@@ -71,7 +71,7 @@ If you run this command without specifying what version you wish to launch, it w
 
 **A:** At the moment, there's not much of a difference between OpenRec and Rec.js. They both do the same job, which is allowing old Rec Room builds to be playable again.
 
-Since recroom2016 no longer wishes to work on OpenRec (because of OpenLabs), Rec.js exists to be an improvement/recreation of OpenRec to include more features and better support.
+Since OpenRec is no longer being actively worked on, Rec.js exists to be an improvement of OpenRec to include more features and better support for old Rec Room builds.
 
 ### Q: Is it possible to play with other people with Rec.js?
 
@@ -85,4 +85,4 @@ Since recroom2016 no longer wishes to work on OpenRec (because of OpenLabs), Rec
 
 - If there is no console output when you launch your build, that means the builds RecNet server domain has not been modified. 
 
-- If there is console output but there is a "Failed to connect to RecNet!" error, [Submit an issue!](/issues)
+- If there is console output but there is a "Failed to connect to RecNet!" error, [Submit an issue!](https://github.com/RealMCoded/Rec.js/issues)
