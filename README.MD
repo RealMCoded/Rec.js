@@ -16,7 +16,7 @@ Rec.js is RecNet server replacement for old Rec Room builds.
 
 ✅ backwards compatible with [OpenRec](https://github.com/recroom2016/OpenRec)
 
-✅ fast, small, and portable (~500kb base download, ~3MB after package download)
+✅ fast, small, and portable (~650kb base download, ~9MB after package download)
 
 **Rec.js is not...**
 
