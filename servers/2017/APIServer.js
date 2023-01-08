@@ -162,7 +162,7 @@ function serve() {
         req.on('end', () => {
             try {
                 console.log(body)
-                var ses = require("../../shared/sessions.js").create(body)
+                var ses = require("../../shared/sessions.js").create(body, "2017")
                 process.session = ses //this makes it so i can share the variable later with the web socket.
                 res.send(ses)
             } catch (er) {
