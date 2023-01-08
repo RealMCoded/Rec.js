@@ -28,7 +28,7 @@ Rec.js is RecNet server replacement for old Rec Room builds.
 
 ## Build support list
 
-[Read this part of the FaQ before saying a build does not work](#q-my-build-doesnt-work)
+[Read this part of the FaQ before making an issue that your build doesn't work!](#q-my-build-doesnt-work)
 
 | Year | Supported | Tested Builds      | Notes                                                    |
 |------|------------|--------------------|---------------------------------------------------------|
@@ -57,7 +57,7 @@ To get this working with your own builds, you will need to modify them yourself.
 
 **Edit your configurations**
 
-To edit your user information and some thing about the server, run `npm run config` (or `yarn run config` if you have yarn).
+To edit your user information and how the server operates, run `npm run config` (or `yarn run config` if you have yarn).
 
 **Start the server**
 
@@ -71,11 +71,15 @@ If you run this command without specifying what version you wish to launch, it w
 
 **A:** At the moment, there's not much of a difference between OpenRec and Rec.js. They both do the same job, which is allowing old Rec Room builds to be playable again.
 
-Since OpenRec is no longer being actively worked on, Rec.js exists to be an improvement of OpenRec to include more features and better support for old Rec Room builds.
+Since OpenRec is no longer being worked on, Rec.js exists to be an improvement of OpenRec to include more features and better support for old Rec Room builds.
 
 ### Q: Is it possible to play with other people with Rec.js?
 
 **A:** Yes! Multiplayer is handled with a [Photon PUN server](https://www.photonengine.com/pun) and a [Photon Voice server](https://www.photonengine.com/en-us/Voice), not via the RecNet server.
+
+### Q: Is it possible for someone using OpenRec and someone using Rec.js to play together?
+
+**A:** It is indeed possible for the same reasons listed [here](#q-is-it-possible-to-play-with-other-people-with-recjs)
 
 ### Q: My build doesn't work!
 
