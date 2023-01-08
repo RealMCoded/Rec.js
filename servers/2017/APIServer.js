@@ -90,7 +90,10 @@ function serve() {
     })
 
     app.get('/api/images/v1/named', (req, res) => {
-        res.send("[{\"FriendlyImageName\":\"DormRoomBucket\",\"ImageName\":\"DormRoomBucket\",\"StartTime\":\"2021-12-27T21:27:38.1880175-08:00\",\"EndTime\":\"2025-12-27T21:27:38.1880399-08:00\"}")
+        res.sendStatus(404)
+        //Send a 404 error so posters will load.
+        //Sending the commented out request bellow shows Unity question marks.
+        //res.send("[{\"FriendlyImageName\":\"DormRoomBucket\",\"ImageName\":\"DormRoomBucket\",\"StartTime\":\"2021-12-27T21:27:38.1880175-08:00\",\"EndTime\":\"2025-12-27T21:27:38.1880399-08:00\"}")
     })
 
     /*
