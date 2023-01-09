@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rec.js - RecNet server software for old Rec Room builds</title>
+    <!--Discord Embed-->
+    <meta content="Rec.js" property="og:title" />
+    <meta content="A RecNet server replacement for old Rec Room builds!" property="og:description" />
+    <meta content="./assets/logobg.png" property="og:image" />
+    <meta content="#e8d44d" data-react-helmet="true" name="theme-color" />
     <link href="index.css" rel="stylesheet" type="text/css">
     <style>
         body, html {
@@ -14,7 +19,7 @@
         
         .hero-image {
           background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/bg_anim.gif");
-          height: 50%;
+          height: 100%;
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
@@ -48,16 +53,17 @@
         </style>
     </head>
 <body>  
+  <!--TODO: Fix monitor sizes-->
     <div class="hero-image">
         <div class="hero-text">
             <img src="./assets/LogoText.png" alt="A yellow Rec Room logo with text saying 'Rec.js'.">
-            <p>Rec.js is RecNet server replacement for old Rec Room builds.</p>
+            <h3>A RecNet server replacement for old Rec Room builds!</h3>
             <button onclick="window.location = './#download'">Download</button>
             <button onclick="window.location = 'https:\/\/github.com/RealMCoded/Rec.js'">Github</button>
             <button onclick="alert('soon')">Discord</button>
+            <br>
+            <p>(better website coming soon)</p>
         </div>
     </div>
-    <br>
-    <h3>This is placeholder text until i get around to adding some proper text here sometime in the future.</h3>
 </body>
 </html>
