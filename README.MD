@@ -1,7 +1,1 @@
-<div align="center">
-<img src="./logo/LogoText.png" alt="A yellow Rec Room logo with text saying 'Rec.js'.">
-</div>
-
-#
-
-This branch is used for the Github page!
+This branch is used for the Github Pages site. [Check it out!](https://realmcoded.github.io/Rec.js/)
