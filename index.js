@@ -57,6 +57,8 @@ if (!fs.existsSync('./user-info/user.json')) {
     fs.writeFileSync("./user-info/user.json", JSON.stringify(plrjson))
 }
 
+if (cmd == undefined) {return require("./src/no-command.js").run()}
+
 switch(cmd){
     case "serve": {
         require("./src/serve.js").run(process.argv[3], process.argv[4])
@@ -67,5 +69,5 @@ switch(cmd){
     case "help": {
         require("./src/help.js").run()
     } break;
-    default: {console.error(`${chalk.red('[ERROR]')} Invalid or no command specified.\n${tryText}`)} break;
+    default: {console.error(`${chalk.red('[ERROR]')} Invalid command specified.\n${tryText}`)} break;
 }
