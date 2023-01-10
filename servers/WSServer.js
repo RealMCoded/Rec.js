@@ -16,6 +16,7 @@ function serve() {
     const wss = new WebSocketServer({ port: port });
     
     wss.on('connection', function connection(ws) {
+        console.log(`${chalk.blueBright("[WS]")} WebSocket got a connection!`);
         ws.on('message', function message(data) {
             console.log(`${chalk.blueBright("[WS]")} Data received: ${data}`);
             let thing = processRequest(data)
