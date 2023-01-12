@@ -14,16 +14,21 @@ function start(servePort = 20161){
 
 function serve() {
     const wss = new WebSocketServer({ port: port });
-    
+
     wss.on('connection', function connection(ws) {
-        console.log(`${chalk.blueBright("[WS]")} WebSocket got a connection!`);
+        console.log(`${chalk.blueBright("[WS]")} Client connected!`);
         ws.on('message', function message(data) {
             console.log(`${chalk.blueBright("[WS]")} Data received: ${data}`);
             let thing = processRequest(data)
             console.log(`${chalk.blueBright("[WS]")} Data sent: ${thing}`)
             ws.send(thing)
         });
+
+        ws.on('close', function() {
+            console.log(`${chalk.blueBright("[WS]")} Client disconnected.`);
+        });
     });
+
     console.log(`${chalk.blueBright("[WS]")} WS started on port ${port}`)
 }
 
