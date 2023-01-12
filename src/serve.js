@@ -1,7 +1,7 @@
 const chalk = require("chalk")
 const { defaultVersion, autorunBuild, buildPaths } = require("../config.json")
 const tryText = "Example Usage: \'npm run serve 2016\'."
-
+const child_process = require('child_process')
 
 function run(ver, port) {
     if (ver == undefined) {
@@ -16,15 +16,15 @@ function run(ver, port) {
 
     switch(ver){
         case "2016": {
+            if (autorunBuild) {console.log(`${chalk.gray("[INFO]")} Starting 2016 client...`); try{child_process.exec(buildPaths.rr2016)}catch(err){console.error(`${chalk.red('[ERROR]')} Something bad happened when trying to launch your build!\n\n${err.message}`)}}
             console.log(`${chalk.gray("[INFO]")} Starting 2016 server...`)
-            //if (autorunBuild) {console.log(`${chalk.gray("[INFO]")} Starting 2016 client...`); child_process.execSync(buildPaths.rr2016)}
             require("../servers/2016/APIServer.js").start(port)
             require("../servers/WSServer.js").start()
         } break;
         case "2017": {
+            if (autorunBuild) {console.log(`${chalk.gray("[INFO]")} Starting 2017 client...`); try{child_process.exec(buildPaths.rr2017)}catch(err){console.error(`${chalk.red('[ERROR]')} Something bad happened when trying to launch your build!\n\n${err.message}`)}}
             console.log(`${chalk.gray("[INFO]")} Starting 2017 server...`)
             console.log(`${chalk.yellow("[WARN]")} 2017 support is still not fully finished! Expect some things to fail when using this!`)
-            //if (autorunBuild) {console.log(`${chalk.gray("[INFO]")} Starting 2017 client...`); child_process.execSync(buildPaths.rr2017)}
             require("../servers/2017/APIServer.js").start(port)
             require("../servers/WSServer.js").start()
         } break;

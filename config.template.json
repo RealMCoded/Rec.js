@@ -4,8 +4,8 @@
     "showDevInfo": true,
     "autorunBuild": false,
     "buildPaths":{
-        "2016":"./2016/build/location/here.exe",
-        "2017":"./2016/build/location/here.exe",
-        "2018":"./2016/build/location/here.exe"
+        "rr2016":"2016/build/location/here.exe",
+        "rr2017":"2017/build/location/here.exe",
+        "rr2018":"2018/build/location/here.exe"
     }
 }
