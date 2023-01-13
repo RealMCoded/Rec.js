@@ -14,7 +14,7 @@ async function run(){
 
     switch(answers.options_main){
         case "Run Server": {return menu_serve()} break;
-        case "Edit settings": {require("./config.js").run()} break;
+        case "Edit settings": {require("./config.js").run(true)} break;
         case "Exit": {return console.log("\n👋 Bye!")} break;
     }
 }

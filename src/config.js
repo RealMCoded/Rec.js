@@ -2,34 +2,42 @@ const chalk = require("chalk")
 const inquirer = require("inquirer")
 const fs = require("node:fs");
 
-let player, server;
+let player, server, return_to_ezmenu;
 
 let pfpSettings = {
     change: false,
     location: ""
 };
 
-async function run() {
+async function run(returnToEZmenu = false) {
+    return_to_ezmenu = returnToEZmenu
     console.log(`${chalk.yellow("Rec.js Config Utility")}`)
     player = JSON.parse(fs.readFileSync("./user-info/user.json"))
     server = JSON.parse(fs.readFileSync("./config.json"))
     mainMenu()
 }
 
-function saveExit(){
-    fs.writeFileSync("./user-info/user.json", JSON.stringify(player))
-    console.log("✅ Wrote player config to file.")
-    console.log("✅ Wrote server config to file.")
-    if (pfpSettings.change) {
-        try {
-            fs.copyFileSync(pfpSettings.location, "./user-info/ProfileImage.png")
-            console.log("✅ Profile image changed.")
-        } catch(e) {
-            console.log(`❌ Error changing profile image. ${e.message}`)
+function exit(saveChanges){
+    if (saveChanges){
+        fs.writeFileSync("./user-info/user.json", JSON.stringify(player))
+        console.log("✅ Wrote player config to file.")
+        console.log("✅ Wrote server config to file.")
+        if (pfpSettings.change) {
+            try {
+                fs.copyFileSync(pfpSettings.location, "./user-info/ProfileImage.png")
+                console.log("✅ Profile image changed.")
+            } catch(e) {
+                console.log(`❌ Error changing profile image. ${e.message}`)
+            }
         }
     }
-    console.log("👋 Bye!")
-    process.exit(0)
+    if (return_to_ezmenu) {
+        console.log("")
+        require("./no-command.js").run()
+    } else {
+        console.log("👋 Bye!")
+        process.exit(0)
+    }
 }
 
 /*
@@ -52,8 +60,8 @@ async function mainMenu(){
     switch(answers.options_main){
         case "Edit user settings": {return menu_user()} break;
         case "Edit server settings": {return menu_server()} break;
-        case "Save and exit": {return saveExit()} break;
-        case "Exit without saving": {return console.log("\n👋 Bye!")} break;
+        case "Save and exit": {return exit()} break;
+        case "Exit without saving": {return exit()} break;
     }
 }
 
