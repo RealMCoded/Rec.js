@@ -1,4 +1,5 @@
 const { userid, level, username } = require("../user-info/user.json")
+const { showDevInfo } = require("../config.json")
 
 function GetOrCreate() {
     return JSON.stringify({
@@ -9,7 +10,7 @@ function GetOrCreate() {
         "Level": level,
         "Reputation": 0,
         "Verified": true,
-        "Developer": true,
+        "Developer": showDevInfo,
         "HasEmail": true,
         "CanReceiveInvites": false,
         "ProfileImageName": username,
@@ -29,7 +30,7 @@ function GetOrCreateArray() {
         "Level": level,
         "Reputation": 0,
         "Verified": true,
-        "Developer": true,
+        "Developer": showDevInfo,
         "HasEmail": true,
         "CanReceiveInvites": false,
         "ProfileImageName": username,
