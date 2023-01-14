@@ -10,7 +10,7 @@ Rec.js is RecNet server replacement for old Rec Room builds.
 
 ✅ a localhostable server for single person use ([It is possible to play with others however!](#q-is-it-possible-to-play-with-other-people-with-recnetjs))
 
-✅ similar to [OpenRec](https://github.com/recroom2016/OpenRec) 
+✅ similar to [OpenRec](https://github.com/recroom2016/OpenRec) and VaultServer
 
 ✅ backwards compatible with [OpenRec](https://github.com/recroom2016/OpenRec)
 
