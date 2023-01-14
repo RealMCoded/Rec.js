@@ -19,7 +19,7 @@ function run(ver, port) {
             if (autorunBuild) {console.log(`${chalk.gray("[INFO]")} Starting 2016 client...`); try{child_process.exec(buildPaths.rr2016)}catch(err){console.error(`${chalk.red('[ERROR]')} Something bad happened when trying to launch your build!\n\n${err.message}`)}}
             console.log(`${chalk.gray("[INFO]")} Starting 2016 server...`)
             require("../servers/2016/APIServer.js").start(port)
-            require("../servers/WSServer.js").start()
+            //require("../servers/WSServer.js").start() //WS is not used in 2016 from what i understand.
         } break;
         case "2017": {
             if (autorunBuild) {console.log(`${chalk.gray("[INFO]")} Starting 2017 client...`); try{child_process.exec(buildPaths.rr2017)}catch(err){console.error(`${chalk.red('[ERROR]')} Something bad happened when trying to launch your build!\n\n${err.message}`)}}
