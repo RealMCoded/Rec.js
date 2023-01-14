@@ -81,7 +81,7 @@ function serve() {
         res.send(require("../../shared/equipment.js").getequipment())
     })
 
-    app.get('/api/events/v3/list', (req, res) => {
+    app.get('/api/events/v*/list', (req, res) => {
         res.send("[]")
     })
 
@@ -103,7 +103,7 @@ function serve() {
         res.send(require("../../shared/getorcreate.js").GetOrCreateArray())
     })
 
-    app.post('/api/platformlogin/v6/', (req, res) => {
+    app.post('/api/platformlogin/v*/', (req, res) => {
         let uid = userid.toString()
         res.send(JSON.stringify({Token:Buffer.from(uid).toString('base64'), PlayerId:uid, Error:""}))
     })
