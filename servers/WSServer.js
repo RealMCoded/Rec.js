@@ -26,6 +26,7 @@ function serve() {
 
         ws.on('close', function() {
             console.log(`${chalk.blueBright("[WS]")} Client disconnected.`);
+            process.session = undefined
         });
     });
 
