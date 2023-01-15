@@ -43,8 +43,8 @@ Rec.js is RecNet server replacement for old Rec Room builds.
 
 **Note: Stable and Pre links do not work at the moment.**
 
-- [Latest Stable Release]() - The current stable release of Rec.js. The most stable offering. **Recommended** 
-- [Latest Pre Release]() - The next version of Rec.js. Contains new features and is not as stable as Stable.
+- [Latest Stable Release](https://realmcoded.github.io/Rec.js/download/stable) - The current stable release of Rec.js. The most stable offering. **Recommended** 
+- [Latest Pre Release](https://realmcoded.github.io/Rec.js/download/pre) - The next version of Rec.js. Contains new features and is not as stable as Stable.
 - [Latest Developer Release](https://github.com/RealMCoded/Rec.js/archive/refs/heads/master.zip) - Contains features that come out as soon as they are added. The least stable version with untested code. **Use at your own risk!**
 
 ## Building
