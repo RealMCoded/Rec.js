@@ -31,7 +31,7 @@ Rec.js is RecNet server replacement for old Rec Room builds.
 | Year | Supported | Tested Builds      | Notes                                                    |
 |------|------------|--------------------|---------------------------------------------------------|
 | 2016 | ✅         | December 23rd 2016 | Image saving does not work as intended.                 |
-| 2017 | ✅         | October 10th 2017  | If client is restarted, old session data still remains. |
+| 2017 | ✅         | October 10th 2017  | Image saving does not work as intended.                 |
 | 2018 | ❌         |                    |                                                         |
 | 2019 | ❌         |                    | Support for this build might never be officially added. |
 | 2020 | ❌         |                    | Support for this build might never be officially added. |
@@ -44,7 +44,7 @@ Rec.js is RecNet server replacement for old Rec Room builds.
 **Note: Stable and Pre links do not work at the moment.**
 
 - [Latest Stable Release]() - The current stable release of Rec.js. The most stable offering. **Recommended** 
-- [Latest Pre Release]() - The next version of Rec.js. Contains new features and is not as stable.
+- [Latest Pre Release]() - The next version of Rec.js. Contains new features and is not as stable as Stable.
 - [Latest Developer Release](https://github.com/RealMCoded/Rec.js/archive/refs/heads/master.zip) - Contains features that come out as soon as they are added. The least stable version with untested code. **Use at your own risk!**
 
 ## Building
