@@ -12,7 +12,7 @@ Rec.js is RecNet server replacement for old Rec Room builds.
 
 ✅ similar to [OpenRec](https://github.com/recroom2016/OpenRec) and VaultServer
 
-✅ backwards compatible with [OpenRec](https://github.com/recroom2016/OpenRec)
+✅ a server for 2016 and 2017 builds
 
 ✅ fast, small, and portable (~650kb base download, ~9MB after package download)
 
@@ -21,6 +21,8 @@ Rec.js is RecNet server replacement for old Rec Room builds.
 ❌ a server that multiple people can connect to
 
 ❌ similar to OpenRec Live / OpenLabs
+
+❌ a server for builds from 2018 and onwards
 
 ❌ slow and bloated
 
@@ -47,29 +49,9 @@ Rec.js is RecNet server replacement for old Rec Room builds.
 - [Latest Pre Release](https://realmcoded.github.io/Rec.js/download/pre) - The next version of Rec.js. Contains new features and is not as stable as Stable.
 - [Latest Developer Release](https://github.com/RealMCoded/Rec.js/archive/refs/heads/master.zip) - Contains features that come out as soon as they are added. The least stable version with untested code. **Use at your own risk!**
 
-## Building
-
-**This step is required to use this program.**
-
-This project requires [Node.js](https://nodejs.org/) to be installed before you continue.
-
-To install the required components, run `npm i`. If you have yarn, run `yarn`.
-
-Config files are created by themselves on first boot.
-
-To get this working with your own builds, you will need to modify them yourself.
-
 ## Usage
 
-**Edit your configurations**
-
-To edit your user information and how the server operates, run `npm run config` (or `yarn run config` if you have yarn).
-
-**Start the server**
-
-To start your server, run `npm run serve` (or `yarn run serve` or `yarn serve`). When running this command, you have to specify what build you want to host a server for (Example: `npm run serve 2017` will start a 2017 server.) 
-
-If you run this command without specifying what version you wish to launch, it will default to the version in your server configuration (default is 2016 if not modified)
+Check out [this wiki page](https://github.com/RealMCoded/Rec.js/wiki/Installation-Guide) for the installation guide!
 
 ## (not so) Frequently Asked Questions
 
