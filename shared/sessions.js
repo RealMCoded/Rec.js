@@ -8,8 +8,6 @@ function joinRandom(req, ver){
 
     if (privateRooms) sessionID = Math.floor(Math.random() * (99 - 0 + 1) ) + 0;
 
-    //console.log(json)
-
     var session = {
         Result: 0,
         GameSession: {
@@ -31,8 +29,6 @@ function joinRandom(req, ver){
         }
     }
 
-    //console.log(session)
-
     return JSON.stringify(session);
 }
 
@@ -42,8 +38,6 @@ function create(req, ver){
     var sessionID = ver + "1"
 
     if (privateRooms) sessionID = Math.floor(Math.random() * (99 - 0 + 1) ) + 0;
-
-    //console.log(json)
 
     var session = {
         Result: 0,
@@ -65,8 +59,6 @@ function create(req, ver){
             IsFull: false
         }
     }
-
-    //console.log(session)
 
     return JSON.stringify(session);
 }

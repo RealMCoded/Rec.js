@@ -10,7 +10,7 @@ function run(ver, port) {
             case "2016": {ver = "2016";} break;
             case "2017": {ver = "2017";} break;
             case "2018": {ver = "2018";} break;
-            default: {return console.error(`${chalk.red('[ERROR]')} Invalid version specified in config.json. Expected "2016". Got "${defaultVersion}".`)} break;
+            default: {return console.error(`${chalk.red('[ERROR]')} Invalid version specified in config.json. Expected "2016", "2017". Got "${defaultVersion}".`)} break;
         }
     }
 

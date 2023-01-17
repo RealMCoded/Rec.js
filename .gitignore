@@ -1,10 +1,14 @@
+# All module files are not commited to keep size down.
 node_modules/
 package-lock.json
-rec_room/
-servers/test
+yarn.lock
+
+# User generated config files.
 user-info/user.json
 config.json
-yarn.lock
+
+# Misc folders.
+rec_room/
 images/*
 !images/.gitkeep
 bin/

@@ -4,7 +4,7 @@ const morgan = require('morgan') //for webserver output
 const app = express()
 const path = require("path")
 app.use(morgan(`${chalk.green("[API]")} :method ":url" :status - :response-time ms`))
-const { userid } = require('../../user-info/user.json')
+const { userid, username } = require('../../user-info/user.json')
 
 let port;
 
@@ -104,8 +104,7 @@ function serve() {
     })
 
     app.post('/api/platformlogin/v*/', (req, res) => {
-        let uid = userid.toString()
-        res.send(JSON.stringify({Token:Buffer.from(uid).toString('base64'), PlayerId:uid, Error:""}))
+        res.send(JSON.stringify({Token:Buffer.from(`${username}_${userid}`).toString('base64'), PlayerId:`${userid}`, Error:""}))
     })
 
     app.post('/api/settings/v2/set', (req, res) => {

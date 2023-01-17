@@ -2,9 +2,11 @@ const chalk = require("chalk")
 const { version, dev } = require("./package.json")
 let cmd = process.argv[2]
 const fs = require("node:fs")
-const tryText = "For a list of commands, run \'node . help\'"
+const tryText = "For a list of commands, run \'npm run help\'"
 const child_process = require('child_process')
 process.title = "Rec.js"
+
+try{process.commit = child_process.execSync('git rev-parse HEAD').toString().substring(0, 7)} catch(e) {process.commit = "[git not installed]"}
 
 //Print logo
 console.log(`
@@ -34,9 +36,7 @@ console.log(`
 [49m [49;38;5;185m▀▀[48;5;185m                                     [49;38;5;185m▀▀[49m [m`)
 
 //other welcome code
-let commit;
-try {commit = child_process.execSync('git rev-parse HEAD').toString().substring(0, 7)} catch(e) {commit = "[git not installed]"}
-console.log(chalk.yellow(`\nRec.js Version ${version}${(dev.is_dev == true ? dev.suffix : "")} (commit ${commit})\n`))
+console.log(chalk.yellow(`\nRec.js Version ${version}${(dev.is_dev == true ? dev.suffix : "")} (commit ${process.commit})\n`))
 if (dev.is_dev == true) console.log(`${chalk.red(`⚠️WARNING⚠️`)}\nThis is a pre-release version of Rec.js.
 This version contains unfinished and untested code that may result in crashes.
 Please report any bugs you may find to the github repo! https://github.com/RealMCoded/Rec.js/issues \n`)

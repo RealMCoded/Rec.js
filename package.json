@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "dev": {
     "is_dev": true,
-    "suffix": "-dev"
+    "suffix": "-pre1"
   },
   "description": "A RecNet server replacement for old Rec Room builds",
   "main": "index.js",
@@ -11,6 +11,7 @@
     "serve": "node index.js serve",
     "config": "node index.js config",
     "help": "node index.js help",
+    "rec.js": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
