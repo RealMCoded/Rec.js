@@ -1,9 +1,10 @@
 const chalk = require('chalk')
 const { WebSocketServer } = require('ws');
+const { ports } = require("../config.json")
 
 let port;
 
-function start(servePort = 20161){
+function start(servePort = ports.WS){
     try {
         port = servePort
         serve()

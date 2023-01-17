@@ -4,12 +4,13 @@ const morgan = require('morgan') //for webserver output
 const app = express()
 const path = require("path")
 app.use(morgan(`${chalk.green("[API]")} :method ":url" :status - :response-time ms`))
+const { ports } = require("../../config.json")
 
 let port;
 
-function start(serveport){
+function start(serveport = ports.API_2016){
     try {
-        port = serveport ?? 2016
+        port = serveport
         serve()
     } catch(e) {
         console.error(e)

@@ -5,12 +5,13 @@ const app = express()
 const path = require("path")
 app.use(morgan(`${chalk.green("[API]")} :method ":url" :status - :response-time ms`))
 const { userid, username } = require('../../user-info/user.json')
+const { ports } = require("../../config.json")
 
 let port;
 
-function start(serveport){
+function start(serveport = ports.API_2017){
     try {
-        port = serveport ?? 2017
+        port = serveport
         serve()
     } catch(e) {
         console.error(e)
