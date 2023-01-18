@@ -21,6 +21,7 @@ function exit(saveChanges){
     if (saveChanges){
         fs.writeFileSync("./user-info/user.json", JSON.stringify(player))
         console.log("✅ Wrote player config to file.")
+        fs.writeFileSync("./config.json", JSON.stringify(server))
         console.log("✅ Wrote server config to file.")
         if (pfpSettings.change) {
             try {
@@ -60,7 +61,7 @@ async function mainMenu(){
     switch(answers.options_main){
         case "Edit user settings": {return menu_user()} break;
         case "Edit server settings": {return menu_server()} break;
-        case "Save and exit": {return exit()} break;
+        case "Save and exit": {return exit(true)} break;
         case "Exit without saving": {return exit()} break;
     }
 }
@@ -97,6 +98,7 @@ async function menu_server(){
           `Default build to launch`,
           `Toggle private rooms`,
           `Toggle developer info`,
+          `Change server ports`,
           'Back'
         ],
     });
@@ -105,7 +107,29 @@ async function menu_server(){
         case "Default build to launch": {return set_autolaunch()} break;
         case "Toggle private rooms": {return toggle_private()} break;
         case "Toggle developer info": {return toggle_dev()} break;
+        case "Change server ports": {return set_ports()} break;
         case "Back": {return mainMenu()} break;
+    }
+}
+
+async function set_ports(){
+    const answers = await inquirer.prompt({
+        name: 'options_port',
+        type: 'list',
+        message: 'Edit server ports',
+        choices: [
+          `2016 API`,
+          `2017 API`,
+          `WebSocket [WS]`,
+          'Back'
+        ],
+    });
+
+    switch(answers.options_port){
+        case "2016 API": {return set_port("2016API")} break;
+        case "2017 API": {return set_port("2017API")} break;
+        case "WebSocket [WS]": {return set_port("WS")} break;
+        case "Back": {return menu_server()} break;
     }
 }
 
@@ -158,6 +182,32 @@ async function set_name(){
     
     player.username = answers.player_name;
     menu_user()
+}
+
+async function set_port(port){
+    console.log(port)
+    let _prt
+    switch(port){
+        case "2016API": _prt = server.ports.API_2016; break;
+        case "2017API": _prt = server.ports.API_2017; break;
+        case "WS": _prt = server.ports.WS; break;
+    } 
+    const answers = await inquirer.prompt({
+        name: 'port',
+        type: 'input',
+        message: 'Enter in the new port:',
+        default() {
+            return _prt;
+        },
+    });
+    
+    switch(port){
+        case "2016API": server.ports.API_2016 = parseInt(answers.port); break;
+        case "2017API": server.ports.API_2017 = parseInt(answers.port); break;
+        case "WS": server.ports.WS = parseInt(answers.port); break;
+    } 
+
+    menu_server()
 }
 
 async function set_token(){
