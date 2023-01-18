@@ -22,7 +22,7 @@ function serve() {
         GET REQUESTS
     */
     app.get('/', (req, res) => {
-        res.sendFile(path.resolve(`${__dirname}/../port-in-use.html`))
+        res.redirect("https://realmcoded.github.io/Rec.js/port-in-use.html")
     })
 
     app.get('/api/versioncheck/*', (req, res) => {
