@@ -43,13 +43,13 @@ Please report any bugs you may find to the github repo! https://github.com/RealM
 
 //check for config
 if (!fs.existsSync('./config.json')) {
-    console.error(`${chalk.yellow('[WARN]')} config.json does not exist! Creating...\n`)
+    console.error(`${chalk.yellow('[WARN]')} config.json does not exist! Creating...`)
     fs.copyFileSync('./config.template.json', './config.json')
 }
 
 //check for player config
 if (!fs.existsSync('./user-info/user.json')) {
-    console.error(`${chalk.yellow('[WARN]')} ./user-info/user.json does not exist! Creating...\n`)
+    console.error(`${chalk.yellow('[WARN]')} ./user-info/user.json does not exist! Creating...`)
     fs.copyFileSync('./user-info/user.template.json', './user-info/user.json')
     //Randomize UserID
     let plrjson = JSON.parse(fs.readFileSync("./user-info/user.json"))
@@ -60,14 +60,8 @@ if (!fs.existsSync('./user-info/user.json')) {
 if (cmd == undefined) {return require("./src/no-command.js").run()}
 
 switch(cmd){
-    case "serve": {
-        require("./src/serve.js").run(process.argv[3], process.argv[4])
-    } break;
-    case "config": {
-        require("./src/config.js").run()
-    } break;
-    case "help": {
-        require("./src/help.js").run()
-    } break;
-    default: {console.error(`${chalk.red('[ERROR]')} Invalid command specified.\n${tryText}`)} break;
+    case "serve": require("./src/serve.js").run(process.argv[3], process.argv[4]); break;
+    case "config": require("./src/config.js").run(); break;
+    case "help": require("./src/help.js").run(); break;
+    default: console.error(`${chalk.red('[ERROR]')} Invalid command specified.\n${tryText}`); break;
 }
