@@ -93,7 +93,7 @@ function serve() {
     app.get('/api/images/v1/named', (req, res) => {
         res.sendStatus(404)
         //Send a 404 error so posters will load.
-        //Sending the commented out request bellow shows Unity question marks.
+        //Sending the commented out request below shows Unity question marks.
         //res.send("[{\"FriendlyImageName\":\"DormRoomBucket\",\"ImageName\":\"DormRoomBucket\",\"StartTime\":\"2021-12-27T21:27:38.1880175-08:00\",\"EndTime\":\"2025-12-27T21:27:38.1880399-08:00\"}")
     })
 
@@ -102,6 +102,11 @@ function serve() {
     */
     app.post('/api/platformlogin/v1/profiles', (req, res) => {
         res.send(require("../../shared/getorcreate.js").GetOrCreateArray())
+    })
+
+    //For compatibility with some early 2017 builds
+    app.post('/api/players/v1/getorcreate', (req, res) => {
+        res.send(require("../../shared/getorcreate.js").GetOrCreate())
     })
 
     app.post('/api/platformlogin/v*/', (req, res) => {
@@ -119,6 +124,16 @@ function serve() {
     })
 
     app.post('/api/players/v1/list', (req, res) => {
+        res.send("[]")
+    })
+    
+    app.post('/api/PlayerSubscriptions/v1/init', (req, res) => {
+        res.send("[]")
+    })
+
+    ///api/PlayerSubscriptions/v1/add
+
+    app.post('/api/PlayerSubscriptions/v1/add', (req, res) => {
         res.send("[]")
     })
 

@@ -57,7 +57,7 @@ function processRequest(data){
             result = ""
         }
     } else {
-        result = JSON.stringify(data)
+        result = JSON.stringify({"SessionId": 5})
     }
 
     return result;
