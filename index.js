@@ -1,7 +1,7 @@
 const chalk = require("chalk")
 const { version, dev } = require("./package.json")
 let cmd = process.argv[2]
-const fs = require("node:fs")
+const fs = require("fs")
 const tryText = "For a list of commands, run \'npm run help\'"
 const child_process = require('child_process')
 process.title = "Rec.js"

@@ -1,4 +1,4 @@
-const fs = require("node:fs")
+const fs = require("fs")
 
 function generateCharades(){
     let charadesJSON = new Array()

@@ -1,4 +1,4 @@
-const fs = require("node:fs")
+const fs = require("fs")
 
 function getequipment(){
     return fs.readFileSync("./user-info/equipment.txt")

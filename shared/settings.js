@@ -1,4 +1,4 @@
-const fs = require("node:fs")
+const fs = require("fs")
 const chalk = require('chalk') // colored text
 
 async function setSettings(req) {

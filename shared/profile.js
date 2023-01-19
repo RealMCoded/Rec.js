@@ -1,4 +1,4 @@
-const fs = require("node:fs")
+const fs = require("fs")
 
 async function setPFP(req){
     //TODO: Figure out how to remove the header information from the request.

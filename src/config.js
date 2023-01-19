@@ -1,6 +1,6 @@
 const chalk = require("chalk")
 const inquirer = require("inquirer")
-const fs = require("node:fs");
+const fs = require("fs");
 
 let player, server, return_to_ezmenu;
 
