@@ -78,3 +78,9 @@ Since OpenRec is no longer being worked on, Rec.js exists to be an improvement o
 - If there is no console output when you launch your build, that means the builds RecNet server domain has not been modified. 
 
 - If there is console output but there is a "Failed to connect to RecNet!" error, [Submit an issue!](https://github.com/RealMCoded/Rec.js/issues)
+
+## Credits
+
+- stuartt_mcoded ([mcoded.xyz](https://mcoded.xyz)) - Lead Developer
+
+- andry6702 ([Twitter: @andry6702](https://twitter.com/andry6702)) - Help with getting more 2017 builds working
