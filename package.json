@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "dev": {
     "is_dev": true,
-    "suffix": "-pre3"
+    "suffix": "-pre4"
   },
   "description": "A RecNet server replacement for old Rec Room builds",
   "main": "index.js",
