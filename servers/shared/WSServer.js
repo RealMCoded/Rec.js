@@ -1,6 +1,6 @@
 const chalk = require('chalk')
 const { WebSocketServer } = require('ws');
-const { ports } = require("../../config.json")
+const { ports, privateRooms } = require("../../config.json")
 
 let port;
 
@@ -57,10 +57,23 @@ function processRequest(data){
             result = ""
         }
     } else {
-        result = JSON.stringify({"SessionId": 5})
+        result = JSON.stringify({"SessionId": sessionid()})
     }
 
     return result;
+}
+
+function sessionid(){
+    if(process.session != null){
+        //From my testing, this never seems to happen.
+        //i'll still keep it here just incase.
+        var _session = JSON.parse(process.session)
+        return _session.GameSessionId
+    } else {
+        var sessionID = 20171
+        if (privateRooms) sessionID = Math.floor(Math.random() * (99 - 0 + 1) ) + 0;
+        return sessionID
+    }
 }
 
 module.exports = { start }
