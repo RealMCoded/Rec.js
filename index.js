@@ -53,7 +53,7 @@ if (!fs.existsSync('./user-info/user.json')) {
     fs.copyFileSync('./user-info/user.template.json', './user-info/user.json')
     //Randomize UserID
     let plrjson = JSON.parse(fs.readFileSync("./user-info/user.json"))
-    plrjson.userid = Math.floor(Math.random() * 999999)
+    plrjson.userid = Math.floor(Math.random() * 99999)
     fs.writeFileSync("./user-info/user.json", JSON.stringify(plrjson))
 }
 

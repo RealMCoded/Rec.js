@@ -24,7 +24,7 @@ function run(ver, port) {
         case "2017": {
             if (autorunBuild) {console.log(`${chalk.gray("[INFO]")} Starting 2017 client...`); try{child_process.exec(buildPaths.rr2017)}catch(err){console.error(`${chalk.red('[ERROR]')} Something bad happened when trying to launch your build!\n\n${err.message}`)}}
             console.log(`${chalk.gray("[INFO]")} Starting 2017 server...`)
-            console.log(`${chalk.yellow("[WARN]")} 2017 support is still not fully finished! Expect some things to fail when using this!`)
+            console.log(`${chalk.yellow("[WARN]")} 2017 support is still not fully finished! Expect some things to not work properly when using this!`)
             require("../servers/2017/APIServer.js").start(port)
             require("../servers/shared/WSServer.js").start()
             require("../servers/shared/CDN.js").start()
