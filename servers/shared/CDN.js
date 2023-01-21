@@ -25,7 +25,7 @@ function serve() {
         Right now this only sends the users profile picture, as that is all the CDN appears to be used for in the context of 2017.
         The posters are still a big issue that i want to tackle, i just don't know how because it doesn't make any requests to the CDN for poster data.
     */
-    app.get('//img/*', (req, res) => {
+    app.get('/*', (req, res) => {
         res.sendFile(path.resolve(`${__dirname}/../../user-info/ProfileImage.png`))
     })
     
