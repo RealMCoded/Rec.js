@@ -1,6 +1,6 @@
 const chalk = require('chalk')
 const { WebSocketServer } = require('ws');
-const { ports } = require("../config.json")
+const { ports } = require("../../config.json")
 
 let port;
 
