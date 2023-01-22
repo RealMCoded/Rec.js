@@ -109,9 +109,41 @@ function serve() {
         res.send(require("../../shared/getorcreate.js").GetOrCreate())
     })
 
-    app.post('/api/platformlogin/v*/', (req, res) => {
+    app.post('/api/platformlogin/v1/', (req, res) => {
         res.send(JSON.stringify({Token:Buffer.from(`${username}_${userid}`).toString('base64'), PlayerId:`${userid}`, Error:""}))
     })
+
+    app.post('/api/platformlogin/v1/getcachedlogins', (req, res) => {
+        //NOTE: I'm doing it like this because it doesn't like me doing it with an async function.
+        let body = '';
+        req.setEncoding('utf8');
+        req.on('data', (chunk) => {
+            body += chunk;
+        });
+
+        req.on('end', () => {
+            try {
+                body = body.substring(22) //this removes a useless bit to do with 
+                res.send(require("../../shared/cachedlogin.js").cachedLogins(body))
+            } catch (er) {
+                console.log(er.message)
+                return 0;
+            }
+        });
+    })
+
+    app.post('/api/platformlogin/v1/logincached', (req, res) => {
+        res.send(require("../../shared/cachedlogin.js").loginCache())
+    })
+
+    app.post('/api/platformlogin/v1/createaccount', (req, res) => {
+        res.send(require("../../shared/cachedlogin.js").loginCache())
+    })
+
+    app.post('/api/platformlogin/v1/loginaccount', (req, res) => {
+        res.send(require("../../shared/cachedlogin.js").loginCache())
+    })
+
 
     app.post('/api/settings/v2/set', (req, res) => {
         require("../../shared/settings.js").setSettings(req)
@@ -130,8 +162,6 @@ function serve() {
     app.post('/api/PlayerSubscriptions/v1/init', (req, res) => {
         res.send("[]")
     })
-
-    ///api/PlayerSubscriptions/v1/add
 
     app.post('/api/PlayerSubscriptions/v1/add', (req, res) => {
         res.send("[]")
