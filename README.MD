@@ -30,20 +30,18 @@ Rec.js is RecNet server replacement for old Rec Room builds.
 
 [Read this part of the FaQ before making an issue that your build doesn't work!](#q-my-build-doesnt-work)
 
-| Year | Supported | Tested Builds                                 | Notes                                                                                                     |
-|------|-----------|-----------------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| 2016 | ✅         | December 23rd 2016                            | Image saving does not work as intended.                                                                   |
-| 2017 | ✅         | January 2017, Febuary 2017, October 10th 2017 | Image saving does not work as intended, The computer does not work properly, PFP loading has some issues. |
-| 2018 | ❌         |                                               |                                                                                                           |
-| 2019 | ❌         |                                               | Support for this might never be officially added.                                                         |
-| 2020 | ❌         |                                               | Support for this might never be officially added.                                                         |
-| 2021 | ❌         |                                               | Support for this might never be officially added.                                                         |
-| 2022 | ❌         |                                               | Support for this might never be officially added.                                                         |
-| 2023 | ❌         |                                               | Support for this might never be officially added.                                                         |
+| Year | Supported | Tested Builds                  | Notes                                                                        |
+|------|-----------|--------------------------------|------------------------------------------------------------------------------|
+| 2016 | ✅         | December 23rd 2016           | Image saving does not work as intended.                                      |
+| 2017 | ✅         | January to October 10th 2017 | Image saving does not work as intended, The computer does not work properly. |
+| 2018 | ❌         |                              |                                                                              |
+| 2019 | ❌         |                              | Support for this might never be officially added.                            |
+| 2020 | ❌         |                              | Support for this might never be officially added.                            |
+| 2021 | ❌         |                              | Support for this might never be officially added.                            |
+| 2022 | ❌         |                              | Support for this might never be officially added.                            |
+| 2023 | ❌         |                              | Support for this might never be officially added.                            |
 
 ## Download
-
-**Note: Stable link does not work at the moment.**
 
 - [Latest Stable Release](https://realmcoded.github.io/Rec.js/download/stable.html) - The current stable release of Rec.js. The most stable offering. **Recommended** 
 - [Latest Pre Release](https://realmcoded.github.io/Rec.js/download/pre.html) - The next version of Rec.js. Contains new features and is not as stable as Stable.
