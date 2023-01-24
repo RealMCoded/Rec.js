@@ -86,6 +86,38 @@ function serve() {
         res.send("[]")
     })
 
+    app.get('/api/avatar/v1/saved', (req, res) => {
+        res.send("[]")
+    })
+
+    app.get('/api/consumables/v1/getUnlocked', (req, res) => {
+        res.send("[]")
+    })
+
+    app.get('/api/storefronts/v1/allGiftDrops/2', (req, res) => {
+        res.send("[]")
+    })
+
+    app.get('/api/objectives/v1/myprogress', (req, res) => {
+        res.send(JSON.stringify({"Objectives":[{"Index":2,"Group":0,"Progress":0.0,"VisualProgress":0.0,"IsCompleted":false,"IsRewarded":false},{"Index":1,"Group":0,"Progress":0.0,"VisualProgress":0.0,"IsCompleted":false,"IsRewarded":false},{"Index":0,"Group":0,"Progress":0.0,"VisualProgress":0.0,"IsCompleted":false,"IsRewarded":false}],"ObjectiveGroups":[{"Group":0,"IsCompleted":false,"ClearedAt":"2021-04-18T01:59:14.8642558Z"}]}))
+    })
+
+    app.get('/api/rooms/v*/myrooms', (req, res) => {
+        res.send("[]")
+    })
+
+    app.get('/api/rooms/v*/mybookmarkedrooms', (req, res) => {
+        res.send("[]")
+    })
+
+    app.get('/api/rooms/v*/myRecent?*', (req, res) => {
+        res.send("[]")
+    })
+
+    app.get('/api/playerevents/v1/all', (req, res) => {
+        res.send(JSON.stringify({"Created":[],"Responses":[]}))
+    })
+
     app.get('/api/challenge/v1/getCurrent', (req, res) => {
         res.send(JSON.stringify({"Success":true,"Message":"Rec.js"}))
     })
@@ -111,6 +143,10 @@ function serve() {
 
     app.post('/api/platformlogin/v1/', (req, res) => {
         res.send(JSON.stringify({Token:Buffer.from(`${username}_${userid}`).toString('base64'), PlayerId:`${userid}`, Error:""}))
+    })
+
+    app.get('/api/objectives/v1/updateobjective', (req, res) => {
+        res.send("[]")
     })
 
     app.post('/api/platformlogin/v1/getcachedlogins', (req, res) => {
