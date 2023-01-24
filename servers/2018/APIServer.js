@@ -145,7 +145,7 @@ function serve() {
         res.send(JSON.stringify({Token:Buffer.from(`${username}_${userid}`).toString('base64'), PlayerId:`${userid}`, Error:""}))
     })
 
-    app.get('/api/objectives/v1/updateobjective', (req, res) => {
+    app.post('/api/objectives/v1/updateobjective', (req, res) => {
         res.send("[]")
     })
 
