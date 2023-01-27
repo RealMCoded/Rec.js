@@ -52,16 +52,40 @@
           color: white;
         }
         </style>
+        <script>
+          function toggleDL(){
+            var dl = document.getElementById("dl");
+            var main = document.getElementById("main");
+            if (dl.style.display === "none") {
+              dl.style.display = "block";
+              main.style.display = "none";
+            } else {
+              dl.style.display = "none";
+              main.style.display = "block";
+            }
+          }
+        </script>
     </head>
 <body>  
     <div class="hero-image">
         <div class="hero-text">
             <img src="./assets/LogoText.png" alt="A yellow Rec Room logo with text saying 'Rec.js'.">
             <h3>A RecNet server replacement for old Rec Room builds!</h3>
-            <button onclick="window.location = 'https:\/\/github.com/RealMCoded/Rec.js/releases'">Download</button>
-            <button onclick="window.location = 'https:\/\/github.com/RealMCoded/Rec.js/wiki'">Wiki</button>
-            <button onclick="window.location = 'https:\/\/github.com/RealMCoded/Rec.js'">Github</button>
-            <!--<button>Discord</button>-->
+            <div id="main" style="display: block">
+              <button onclick="toggleDL()">Download</button>
+              <button onclick="window.location = 'https:\/\/github.com/RealMCoded/Rec.js/wiki'">Wiki</button>
+              <button onclick="window.location = 'https:\/\/github.com/RealMCoded/Rec.js'">Github</button>
+              <!--<button>Discord</button>-->
+            </div>
+
+            <div id="dl" style="display: none">
+              <button onclick="window.location = './download/stable.html'">Stable</button>
+              <button onclick="window.location = './download/pre.html'">Pre-Release</button>
+              <button onclick="window.location = 'https:\/\/github.com/RealMCoded/Rec.js/archive/refs/heads/master.zip'">Dev</button>
+              <br>
+              <br>
+              <button onclick="toggleDL()">Back</button>
+            </div>
             <br>
             <p>(better website coming soon)</p>
         </div>
