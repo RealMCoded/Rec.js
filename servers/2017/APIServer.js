@@ -90,6 +90,10 @@ function serve() {
         res.send(JSON.stringify({"Success":true,"Message":"Rec.js"}))
     })
 
+    app.get('/api/avatar/v1/saved', (req, res) => {
+        res.send("[]")
+    })
+
     app.get('/api/images/v1/named', (req, res) => {
         res.sendStatus(404)
         //Send a 404 error so posters will load.
