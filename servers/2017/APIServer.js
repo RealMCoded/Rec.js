@@ -94,6 +94,10 @@ function serve() {
         res.send("[]")
     })
 
+    app.get('/api/objectives/v1/myprogress', (req, res) => {
+        res.send(JSON.stringify({"Objectives":[{"Index":2,"Group":0,"Progress":0.0,"VisualProgress":0.0,"IsCompleted":false,"IsRewarded":false},{"Index":1,"Group":0,"Progress":0.0,"VisualProgress":0.0,"IsCompleted":false,"IsRewarded":false},{"Index":0,"Group":0,"Progress":0.0,"VisualProgress":0.0,"IsCompleted":false,"IsRewarded":false}],"ObjectiveGroups":[{"Group":0,"IsCompleted":false,"ClearedAt":"2021-04-18T01:59:14.8642558Z"}]}))
+    })
+
     app.get('/api/images/v1/named', (req, res) => {
         res.sendStatus(404)
         //Send a 404 error so posters will load.
