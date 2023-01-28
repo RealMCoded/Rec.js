@@ -70,6 +70,28 @@ function serve() {
         res.send(JSON.stringify({AmplitudeKey: "NoKeyProvided"}))
     })
 
+    app.get('/api/gameconfigs/v1/all', (req, res) => {
+        res.send(JSON.stringify([
+            {"Key": "Gift.MaxDaily","Value": "100","StartTime": null,"EndTime": null},
+            {"Key": "Gift.Falloff","Value": "1","StartTime": null,"EndTime": null},
+            {"Key": "Gift.DropChance","Value": "100","StartTime": null,"EndTime": null},
+            {"Key": "UseHeartbeatWebSocket","Value": "0","StartTime": null,"EndTime": null},
+            {"Key": "Screens.ForceVerification","Value": "1","StartTime": null,"EndTime": null},
+            {"Key": "Screens.ForceVerification","Value": "1","StartTime": null,"EndTime": null},
+            {"Key": "forceRegistration","Value": "0","StartTime": null,"EndTime": null},
+            {"Key": "Door.Creative.Query","Value": "#puzzle","StartTime": null,"EndTime": null},
+            {"Key": "Door.Creative.Title","Value": "PUZZLE","StartTime": null,"EndTime": null},
+            {"Key": "Door.Featured.Query","Value": "#featured","StartTime": null,"EndTime": null},
+            {"Key": "Door.Featured.Title","Value": "Featured","StartTime": null,"EndTime": null},
+            {"Key": "Door.Quests.Query","Value": "#quest","StartTime": null,"EndTime": null},
+            {"Key": "Door.Quests.Title","Value": "QUESTS","StartTime": null,"EndTime": null},
+            {"Key": "Door.Shooters.Query","Value": "#pvp #rro","StartTime": null,"EndTime": null},
+            {"Key": "Door.Shooters.Title","Value": "PVP","StartTime": null,"EndTime": null},
+            {"Key": "Door.Sports.Query","Value": "#sport","StartTime": null,"EndTime": null},
+            {"Key": "Door.Sports.Title","Value": "SPORTS & PVP","StartTime": null,"EndTime": null}]
+        ))
+})
+
     app.get('/api/relationships/v2/get', (req, res) => {
         res.send("[]")
     })
