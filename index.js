@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const chalk = require("chalk")
 const { version, dev } = require("./package.json")
 let cmd = process.argv[2]

@@ -4,3 +4,4 @@ IF exist node_modules (
 ) ELSE ( 
 	echo You did not install the requirements!
 )
+pause
