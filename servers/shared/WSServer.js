@@ -16,16 +16,16 @@ function start(servePort = ports.WS){
 function serve() {
     const wss = new WebSocketServer({ port: port });
 
-    wss.on('connection', function connection(ws) {
+    wss.on('connection', (ws) => {
         console.log(`${chalk.blueBright("[WS]")} Client connected!`);
-        ws.on('message', function message(data) {
+        ws.on('message', (data) => {
             console.log(`${chalk.blueBright("[WS]")} Data received: ${data}`);
             let thing = processRequest(data)
             console.log(`${chalk.blueBright("[WS]")} Data sent: ${thing}`)
             ws.send(thing)
         });
 
-        ws.on('close', function() {
+        ws.on('close', () => {
             console.log(`${chalk.blueBright("[WS]")} Client disconnected.`);
             process.session = undefined
         });
