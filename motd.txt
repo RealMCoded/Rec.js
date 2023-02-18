@@ -1,0 +1,1 @@
+Rec.js - RecNet server replacement for old Rec Room builds. Edit motd.txt to change this text!

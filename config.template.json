@@ -3,6 +3,7 @@
     "privateRooms": false,
     "showDevInfo": true,
     "autorunBuild": false,
+    "motdType": "VERSION",
     "buildPaths":{
         "rr2016":"2016/build/location/here.exe",
         "rr2017":"2017/build/location/here.exe",
