@@ -99,6 +99,7 @@ async function menu_server(){
           `Toggle private rooms`,
           `Toggle developer info`,
           `Change server ports`,
+          `Change MOTD source`,
           'Back'
         ],
     });
@@ -108,6 +109,7 @@ async function menu_server(){
         case "Toggle private rooms": {return toggle_private()} break;
         case "Toggle developer info": {return toggle_dev()} break;
         case "Change server ports": {return set_ports()} break;
+        case "Change MOTD source": {return set_MOTD()} break;
         case "Back": {return mainMenu()} break;
     }
 }
@@ -146,6 +148,26 @@ async function set_autolaunch(){
     });
     
     server.defaultVersion = answers.options_autolaunch
+    menu_server()
+}
+
+async function set_MOTD(){
+    const answers = await inquirer.prompt({
+        name: 'options_MOTD',
+        type: 'list',
+        message: 'Select your Message Of The Day source',
+        choices: [
+          `Current Rec.js version`,
+          `From motd.txt`,
+          `Back`
+        ],
+    });
+    
+    switch(answers.options_MOTD){
+        case "Current Rec.js version": {server.motdType = "VERSION"} break;
+        case "From motd.txt": {server.motdType = "LOCAL"} break;
+        case "Back": {} break;
+    }
     menu_server()
 }
 
