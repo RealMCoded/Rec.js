@@ -87,8 +87,6 @@ function serve() {
     })
 
     app.post('/api/images/v2/profile', (req, res) => {
-        /*TODO: Make this actually upload as the profile image*/
-        console.log(`${chalk.green("[API]")} ${chalk.yellow("[WARN]")} Image saving is bugged at the moment.`) //placeholder until i get it working
         require("../../shared/profile.js").setPFP(req)
         res.sendStatus(200);
     })
