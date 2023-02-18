@@ -4,7 +4,6 @@ const morgan = require('morgan') //for webserver output
 const app = express()
 const path = require("path")
 app.use(morgan(`${chalk.red("[NS]")} :method ":url" :status - :response-time ms`))
-const { userid, username } = require('../../user-info/user.json')
 const { ports } = require("../../config.json")
 
 let port;
