@@ -30,16 +30,16 @@ Rec.js is RecNet server replacement for old Rec Room builds.
 
 [Read this part of the FaQ before making an issue that your build doesn't work!](#q-my-build-doesnt-work)
 
-| Year | Supported | Tested Builds                  | Notes                                                                        |
-|------|-----------|--------------------------------|------------------------------------------------------------------------------|
-| 2016 | ✅         | December 23rd 2016           | Image saving does not work as intended.                                      |
-| 2017 | ✅         | January to October 10th 2017 | Image saving does not work as intended, The computer does not work properly. |
-| 2018 | ❌         |                              |                                                                              |
-| 2019 | ❌         |                              | Support for this might never be officially added.                            |
-| 2020 | ❌         |                              | Support for this might never be officially added.                            |
-| 2021 | ❌         |                              | Support for this might never be officially added.                            |
-| 2022 | ❌         |                              | Support for this might never be officially added.                            |
-| 2023 | ❌         |                              | Support for this might never be officially added.                            |
+| Year | Supported | Tested Builds                  | Notes                                             |
+|------|-----------|--------------------------------|---------------------------------------------------|
+| 2016 | ✅         | December 23rd 2016           |                                                   |
+| 2017 | ✅         | January to October 10th 2017 | The computer does not work properly.              |
+| 2018 | ❌         |                              |                                                   |
+| 2019 | ❌         |                              | Support for this might never be officially added. |
+| 2020 | ❌         |                              | Support for this might never be officially added. |
+| 2021 | ❌         |                              | Support for this might never be officially added. |
+| 2022 | ❌         |                              | Support for this might never be officially added. |
+| 2023 | ❌         |                              | Support for this might never be officially added. |
 
 ## Download
 
