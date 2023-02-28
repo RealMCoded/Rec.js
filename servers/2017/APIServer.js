@@ -117,7 +117,7 @@ function serve() {
         res.send(require("../../shared/getorcreate.js").GetOrCreate())
     })
 
-    app.post('/api/platformlogin/v1/', (req, res) => {
+    app.post('/api/platformlogin/v*/', (req, res) => {
         res.send(JSON.stringify({Token:Buffer.from(`${username}_${userid}`).toString('base64'), PlayerId:`${userid}`, Error:""}))
     })
 
