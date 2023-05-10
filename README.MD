@@ -18,7 +18,7 @@ Rec.js is RecNet server replacement for old Rec Room builds.
 
 **Rec.js is not...**
 
-❌ a server that multiple people can connect to
+❌ a server that multiple people can connect to *(if you are looking for a server like that, check out **[LunarRec](https://github.com/RealMCoded/LunarRec)**!)*
 
 ❌ similar to OpenRec Live / OpenLabs
 
