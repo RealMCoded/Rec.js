@@ -17,7 +17,7 @@ function start(serveport = ports.API_2016){
     }
 }
 
-function serve() {
+async function serve() {
     /*
         GET REQUESTS
     */
