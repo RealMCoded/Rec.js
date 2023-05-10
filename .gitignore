@@ -7,6 +7,10 @@ yarn.lock
 user-info/user.json
 config.json
 
+# Do not ommit custom rooms
+user-info/rooms/*
+!user-info/rooms/.gitkeep
+
 # Misc folders.
 rec_room/
 images/*
