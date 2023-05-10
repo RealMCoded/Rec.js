@@ -1,5 +1,5 @@
-const fs = require("fs")
 const chalk = require('chalk') // colored text
+const fs = require("fs")
 
 async function setSettings(req) {
     let json = await require("./decode-request.js").decodeRequest(req)
@@ -8,7 +8,7 @@ async function setSettings(req) {
     let currentSettings = loadSettings()
     for(const element of currentSettings){
         if (element.Key == json.Key){
-            console.log(`${chalk.green("[API]")} Updated setting "${json.Key}" to "${json.Value}". Was "${element.Value}"`)
+            console.log(`${chalk.green("[API]")} Updated setting "${json.Key}" to "${json.Value}", was "${element.Value}"`)
             element.Value = json.Value
         }
     }

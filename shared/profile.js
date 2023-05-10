@@ -23,4 +23,14 @@ async function setPFP(req){
     });
 }
 
-module.exports = { setPFP }
+async function setName(req) {
+    let data = await require("./decode-request.js").decodeRequest(req)
+    data = data.slice(5)
+
+    let json = JSON.parse(fs.readFileSync("./user-info/user.json"))
+    json.username = decodeURIComponent(data)
+    json = JSON.stringify(json)
+    fs.writeFileSync("./user-info/user.json", json)
+}
+
+module.exports = { setPFP, setName }
