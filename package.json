@@ -10,6 +10,7 @@
   "scripts": {
     "serve": "node index.js serve",
     "config": "node index.js config",
+    "rooms": "node index.js rooms",
     "help": "node index.js help",
     "rec.js": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
