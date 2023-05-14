@@ -82,3 +82,9 @@ Since OpenRec is no longer being worked on, Rec.js exists to be an improvement o
 - stuartt_mcoded ([mcoded.xyz](https://mcoded.xyz)) - Lead Developer
 
 - andry6702 ([Twitter: @andry6702](https://twitter.com/andry6702)) - Help with getting more 2017 builds working
+
+## License
+
+This project is under the [**GNU AGPL v3** license](https://github.com/RealMCoded/Rec.js/blob/master/LICENSE). 
+
+*tl;dr: You cannot distribute closed source versions, and if you mofidy this software you **must** link back to the original project which can be found [here](https://github.com/RealMCoded/Rec.js).*
