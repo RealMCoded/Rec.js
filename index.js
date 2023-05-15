@@ -37,7 +37,8 @@ console.log(`
 [49m [49;38;5;185m▀▀[48;5;185m                                     [49;38;5;185m▀▀[49m [m`)
 
 //other welcome code
-console.log(chalk.yellow(`\nRec.js Version ${version}${(dev.is_dev == true ? dev.suffix : "")} (commit ${process.commit})\n`))
+console.log(chalk.yellow(`\nRec.js Version ${version}${(dev.is_dev == true ? dev.suffix : "")} (commit ${process.commit})`))
+console.log(`${chalk.yellow(`Source code:`)} ${chalk.blueBright("https://github.com/RealMCoded/Rec.js/")}\n`)
 if (dev.is_dev == true) console.log(`${chalk.red(`⚠️WARNING⚠️`)}\nThis is a pre-release version of Rec.js.
 This version contains unfinished and untested code that may result in crashes.
 Please report any bugs you may find to the github repo! https://github.com/RealMCoded/Rec.js/issues \n`)
