@@ -51,7 +51,7 @@ function create(req, ver){
             Name: "Rec.js Room",
             ActivityLevelId: json.ActivityLevelId,
             Private: false,
-            Sandbox: false,
+            Sandbox: true,
             SupportsScreens: true,
             SupportsVR: true,
             GameInProgress: false,

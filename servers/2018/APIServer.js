@@ -6,6 +6,7 @@ const path = require("path")
 app.use(morgan(`${chalk.green("[API]")} :method ":url" :status - :response-time ms`))
 const { userid, username } = require('../../user-info/user.json')
 const { ports } = require("../../config.json")
+const { decodeRequest } = require('../../shared/decode-request.js')
 
 let port;
 
@@ -237,45 +238,18 @@ function serve() {
         res.send("[]")
     })
 
-    app.post('/api/gamesessions/v2/joinrandom', (req, res) => {
-        //NOTE: I'm doing it like this because it doesn't like me doing it with an async function.
-        let body = '';
-        req.setEncoding('utf8');
-        req.on('data', (chunk) => {
-            body += chunk;
-        });
-
-        req.on('end', () => {
-            try {
-                var ses = require("../../shared/sessions.js").joinRandom(body, "2017")
-                process.session = ses //this makes it so i can share the variable later with the web socket.
-                res.send(ses)
-            } catch (er) {
-                console.log(er.message)
-                return 0;
-            }
-        });
+    app.post('/api/gamesessions/v2/joinrandom', async (req, res) => {
+        var data = await decodeRequest(req)
+        var ses = require("../../shared/sessions.js").joinRandom(data, "2018")
+        process.session = ses //this makes it so i can share the variable later with the web socket.
+        res.send(ses)
     })
 
-    app.post('/api/gamesessions/v2/create', (req, res) => {
-        //NOTE: I'm doing it like this because it doesn't like me doing it with an async function.
-        let body = '';
-        req.setEncoding('utf8');
-        req.on('data', (chunk) => {
-            body += chunk;
-        });
-
-        req.on('end', () => {
-            try {
-                console.log(body)
-                var ses = require("../../shared/sessions.js").create(body, "2017")
-                process.session = ses //this makes it so i can share the variable later with the web socket.
-                res.send(ses)
-            } catch (er) {
-                console.log(er.message)
-                return 0;
-            }
-        });
+    app.post('/api/gamesessions/v2/create', async (req, res) => {
+        var data = await decodeRequest(req)
+        var ses = require("../../shared/sessions.js").create(data, "2018")
+        process.session = ses //this makes it so i can share the variable later with the web socket.
+        res.send(ses)
     })
     
     app.listen(port, () => {
