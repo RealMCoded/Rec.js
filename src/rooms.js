@@ -7,9 +7,11 @@ let return_to_ezmenu;
 async function run(returnToEZmenu = false) {
     return_to_ezmenu = returnToEZmenu
     console.log(`${chalk.yellow("Rec.js Custom Room Downloader")}`)
+    console.log(process.argv.length)
+    if (process.argv.length == 3) {return menu()}
+
     if (!return_to_ezmenu) {
         for(var i=3; i < process.argv.length; i++) {
-            console.log(process.argv[i])
             await downloadRoom(process.argv[i])
         }
         exit()
