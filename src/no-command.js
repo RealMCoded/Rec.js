@@ -29,6 +29,7 @@ async function menu_serve(){
         choices: [
           '2016',
           '2017',
+          '2018',
           'Back'
         ],
     });
@@ -36,6 +37,7 @@ async function menu_serve(){
     switch(answers.options_serve){
         case "2016": {require("./serve.js").run("2016", undefined)} break;
         case "2017": {require("./serve.js").run("2017", undefined)} break;
+        case "2018": {require("./serve.js").run("2018", undefined)} break;
         case "Back": {return run()} break;
     }
 }
