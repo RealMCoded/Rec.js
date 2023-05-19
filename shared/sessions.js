@@ -63,4 +63,35 @@ function create(req, ver){
     return JSON.stringify(session);
 }
 
-module.exports = { joinRandom, create }
+function joinRoom(req, ver){
+    let json = JSON.parse(req)
+    var creatorID = userid
+    var sessionID = ver + "1"
+
+    if (privateRooms) sessionID = Math.floor(Math.random() * (99 - 0 + 1) ) + 0;
+
+    var session = {
+        Result: 0,
+        GameSession: {
+            GameSessionId: sessionID,
+            RegionId: "us",
+            RoomName: json.RoomName,
+            RecRoomId: null,
+            EventId: null,
+            CreatorPlayerId: creatorID,
+            Name: "Rec.js Room",
+            ActivityLevelId: "",
+            Private: false,
+            Sandbox: false,
+            SupportsScreens: true,
+            SupportsVR: true,
+            GameInProgress: false,
+            MaxCapacity: 20,
+            IsFull: false
+        }
+    }
+
+    return JSON.stringify(session);
+}
+
+module.exports = { joinRandom, joinRoom, create }

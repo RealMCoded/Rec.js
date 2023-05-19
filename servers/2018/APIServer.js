@@ -101,6 +101,10 @@ function serve() {
         res.send("[]")
     })
 
+    app.get('/api/checklist/v1/current', (req, res) => {
+        res.send("[]")
+    })
+
     app.get('/api/equipment/v1/getUnlocked', (req, res) => {
         res.send(require("../../shared/equipment.js").getequipment())
     })
@@ -109,7 +113,7 @@ function serve() {
         res.send("[]")
     })
 
-    app.get('/api/avatar/v1/saved', (req, res) => {
+    app.get('/api/avatar/v*/saved', (req, res) => {
         res.send("[]")
     })
 
@@ -172,23 +176,10 @@ function serve() {
         res.send("[]")
     })
 
-    app.post('/api/platformlogin/v1/getcachedlogins', (req, res) => {
-        //NOTE: I'm doing it like this because it doesn't like me doing it with an async function.
-        let body = '';
-        req.setEncoding('utf8');
-        req.on('data', (chunk) => {
-            body += chunk;
-        });
-
-        req.on('end', () => {
-            try {
-                body = body.substring(22) //this removes a useless bit to do with 
-                res.send(require("../../shared/cachedlogin.js").cachedLogins(body))
-            } catch (er) {
-                console.log(er.message)
-                return 0;
-            }
-        });
+    app.post('/api/platformlogin/v1/getcachedlogins', async (req, res) => {
+        var data = await decodeRequest(req)
+        data = data.substring(22) //this removes a useless bit to do with 
+        res.send(require("../../shared/cachedlogin.js").cachedLogins(data))
     })
 
     app.post('/api/platformlogin/v1/logincached', (req, res) => {
@@ -238,6 +229,11 @@ function serve() {
         res.send("[]")
     })
 
+    app.post('/api/presence/v1/setplayertype', (req, res) => {
+        //TODO: Get this to actually work.
+        res.send("[]")
+    })
+
     app.post('/api/gamesessions/v2/joinrandom', async (req, res) => {
         var data = await decodeRequest(req)
         var ses = require("../../shared/sessions.js").joinRandom(data, "2018")
@@ -248,6 +244,14 @@ function serve() {
     app.post('/api/gamesessions/v2/create', async (req, res) => {
         var data = await decodeRequest(req)
         var ses = require("../../shared/sessions.js").create(data, "2018")
+        process.session = ses //this makes it so i can share the variable later with the web socket.
+        res.send(ses)
+    })
+
+    app.post('/api/gamesessions/v3/joinroom', async (req, res) => {
+        console.log(`${chalk.yellow("[WARN]")} The endpoint "/api/gamesessions/v3/joinroom" does not work at the moment, and is expected to fail.`)
+        var data = await decodeRequest(req)
+        var ses = require("../../shared/sessions.js").joinRoom(data, "2018")
         process.session = ses //this makes it so i can share the variable later with the web socket.
         res.send(ses)
     })
