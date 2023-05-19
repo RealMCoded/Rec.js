@@ -24,6 +24,12 @@ Valid commands:
 
     config                  Edit your user and server configuration. 
                             NOTE: running "yarn config" will not run this.
+
+    rooms <roomName>        Allows you to download a room from RecNet and play with it in older versions!
+                            Not providing any options prompts you to enter in names.
+                            You can enter more than one name at a time to batch download rooms.
+                            Modern Rooms won't work with this, Older ones will.
+                            Example: rooms gribblytheater Gribbly.exe
     `)
 }
 
