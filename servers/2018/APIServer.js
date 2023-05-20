@@ -78,7 +78,6 @@ function serve() {
             {"Key": "Gift.DropChance","Value": "100","StartTime": null,"EndTime": null},
             {"Key": "UseHeartbeatWebSocket","Value": "0","StartTime": null,"EndTime": null},
             {"Key": "Screens.ForceVerification","Value": "1","StartTime": null,"EndTime": null},
-            {"Key": "Screens.ForceVerification","Value": "1","StartTime": null,"EndTime": null},
             {"Key": "forceRegistration","Value": "0","StartTime": null,"EndTime": null},
             {"Key": "Door.Creative.Query","Value": "#puzzle","StartTime": null,"EndTime": null},
             {"Key": "Door.Creative.Title","Value": "PUZZLE","StartTime": null,"EndTime": null},
@@ -193,7 +192,6 @@ function serve() {
     app.post('/api/platformlogin/v1/loginaccount', (req, res) => {
         res.send(require("../../shared/cachedlogin.js").loginCache())
     })
-
 
     app.post('/api/settings/v2/set', (req, res) => {
         require("../../shared/settings.js").setSettings(req)
