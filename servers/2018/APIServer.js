@@ -117,6 +117,22 @@ function serve() {
     })
 
     app.get('/api/consumables/v1/getUnlocked', (req, res) => {
+        res.send(JSON.stringify([
+            {"Id":1,"ConsumableItemDesc":"7OZ5AE3uuUyqa0P","CreatedAt":"2022-02-18T23:29:59.9035571-05:00","Count":99,"UnlockedLevel":1,"IsActive":false},
+            {"Id":2,"ConsumableItemDesc":"_jnjYGBcyEWY5Ub4OezXcA","CreatedAt":"2022-02-18T23:29:59.909138-05:00","Count":99,"UnlockedLevel":1,"IsActive":false},
+            {"Id":3,"ConsumableItemDesc":"5hIAZ9wg5EyG1cILf4FS2A","CreatedAt":"2022-02-18T23:29:59.909138-05:00","Count":99,"UnlockedLevel":1,"IsActive":false},//Cheese Pizza
+            {"Id":4,"ConsumableItemDesc":"wUCIKdJSvEmiQHYMyx4X4w","CreatedAt":"2022-02-18T23:29:59.909138-05:00","Count":99,"UnlockedLevel":1,"IsActive":false},//Supreme Pizza
+            {"Id":5,"ConsumableItemDesc":"JfnVXFmilU6ysv-VbTAe3A","CreatedAt":"2022-02-18T23:29:59.909138-05:00","Count":99,"UnlockedLevel":1,"IsActive":false},//Rootbeer
+            {"Id":6,"ConsumableItemDesc":"InQ25wQMGkG_bvuD5rf2Ag","CreatedAt":"2022-02-18T23:29:59.909138-05:00","Count":99,"UnlockedLevel":1,"IsActive":false},
+            {"Id":7,"ConsumableItemDesc":"mMCGPgK3tki5S_15q2Z81A","CreatedAt":"2022-02-18T23:29:59.909138-05:00","Count":99,"UnlockedLevel":1,"IsActive":false},
+            {"Id":8,"ConsumableItemDesc":"ZuvkidodzkuOfGLDnTOFyg","CreatedAt":"2022-02-18T23:29:59.909138-05:00","Count":99,"UnlockedLevel":1,"IsActive":false},
+            {"Id":9,"ConsumableItemDesc":"VQSgL2pTLkWx4B3kwYG7UA","CreatedAt":"2022-02-18T23:29:59.909138-05:00","Count":99,"UnlockedLevel":1,"IsActive":false},
+            {"Id":10,"ConsumableItemDesc":"Tpxqe_lycUelySRHM8B0Vw","CreatedAt":"2022-02-18T23:29:59.909138-05:00","Count":99,"UnlockedLevel":1,"IsActive":false},
+            {"Id":11,"ConsumableItemDesc":"-hy0qD-iUk-v4NHxNzanmg","CreatedAt":"2022-02-18T23:29:59.909138-05:00","Count":99,"UnlockedLevel":1,"IsActive":false}
+        ]));
+    });
+
+    app.get('/api/consumables/v1/getUnlocked', (req, res) => {
         res.send("[]")
     })
 
@@ -230,6 +246,13 @@ function serve() {
     app.post('/api/presence/v1/setplayertype', (req, res) => {
         //TODO: Get this to actually work.
         res.send("[]")
+    })
+
+    app.post('/api/rooms/v2/browse', async (req, res) => {
+        //TODO: Get this to actually work.
+        var data = await decodeRequest(req)
+        console.log(data)
+        res.send(JSON.stringify())
     })
 
     app.post('/api/gamesessions/v2/joinrandom', async (req, res) => {
