@@ -248,13 +248,6 @@ function serve() {
         res.send("[]")
     })
 
-    app.post('/api/rooms/v2/browse', async (req, res) => {
-        //TODO: Get this to actually work.
-        var data = await decodeRequest(req)
-        console.log(data)
-        res.send(JSON.stringify())
-    })
-
     app.post('/api/gamesessions/v2/joinrandom', async (req, res) => {
         var data = await decodeRequest(req)
         var ses = require("../../shared/sessions.js").joinRandom(data, "2018")
