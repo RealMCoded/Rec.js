@@ -32,7 +32,7 @@ function run(ver, port) {
         case "2018": {
             if (autorunBuild) {console.log(`${chalk.gray("[INFO]")} Starting 2018 client...`); try{child_process.exec(buildPaths.rr2017)}catch(err){console.error(`${chalk.red('[ERROR]')} Something bad happened when trying to launch your build!\n\n${err.message}`)}}
             console.log(`${chalk.gray("[INFO]")} Starting 2018 server...`)
-            console.log(`${chalk.yellow("[WARN]")} Only early 2018 builds work with this server, New builds (like september 2018) are expected to fail.`)
+            console.log(`${chalk.yellow("[WARN]")} Only early 2018 builds work with this server, New builds (like September 2018) are expected to fail.`)
             require("../servers/2018/APIServer.js").start(port)
             require("../servers/shared/WSServer.js").start()
             require("../servers/2018/NS.js").start()
