@@ -12,7 +12,7 @@ Rec.js is RecNet server replacement for old Rec Room builds.
 
 ✅ similar to [OpenRec](https://github.com/recroom2016/OpenRec) and VaultServer
 
-✅ a server for 2016 and 2017 builds
+✅ a server for 2016, 2017, and early 2018 builds
 
 ✅ fast, small, and portable (~650kb base download, ~9MB after package download)
 
@@ -22,7 +22,7 @@ Rec.js is RecNet server replacement for old Rec Room builds.
 
 ❌ similar to OpenRec Live / OpenLabs
 
-❌ a server for builds from 2018 and onwards
+❌ a server for builds from late 2018 and onwards
 
 ❌ slow and bloated
 
@@ -34,7 +34,7 @@ Rec.js is RecNet server replacement for old Rec Room builds.
 |------|-----------|--------------------------------|---------------------------------------------------|
 | 2016 | ✅         | December 23rd 2016           |                                                   |
 | 2017 | ✅         | January to October 10th 2017 | The computer does not work properly.              |
-| 2018 | ❌         |                              |                                                   |
+| 2018 | ✅         | March 2018                   | Late 2018 builds (like september) won't work yet. |
 | 2019 | ❌         |                              | Support for this might never be officially added. |
 | 2020 | ❌         |                              | Support for this might never be officially added. |
 | 2021 | ❌         |                              | Support for this might never be officially added. |
@@ -71,7 +71,7 @@ Since OpenRec is no longer being worked on, Rec.js exists to be an improvement o
 
 **A:** There are multiple reasons why this might be happening.
 
-- We do not support 2018, 2019, 2020, 2021, 2022, or 2023 builds (2018 will be coming soon).
+- We do not support late 2018, 2019, 2020, 2021, 2022, or 2023 builds.
 
 - If there is no console output when you launch your build, that means the builds RecNet server domain has not been modified. 
 
