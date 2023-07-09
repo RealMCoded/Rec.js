@@ -4,36 +4,6 @@ const { ports, privateRooms } = require("../../config.json")
 const { userid } = require('../../user-info/user.json')
 
 let port;
-
-const ResponseResults = {
-    RelationshipChanged: 1,
-    MessageReceived: 2,
-    MessageDeleted: 3,
-    PresenceHeartbeatResponse: 4,
-    SubscriptionListUpdated: 9,
-    SubscriptionUpdateProfile: 11,
-    SubscriptionUpdatePresence: 12,
-    SubscriptionUpdateGameSession: 13,
-    SubscriptionUpdateRoom: 15,
-    ModerationQuitGame: 20,
-    ModerationUpdateRequired: 21,
-    ModerationKick: 22,
-    ModerationKickAttemptFailed: 23,
-    ServerMaintenance: 25,
-    GiftPackageReceived: 30,
-    ProfileJuniorStatusUpdate: 40,
-    RelationshipsInvalid: 50,
-    StorefrontBalanceAdd: 60,
-    ConsumableMappingAdded: 70,
-    ConsumableMappingRemoved: 71,
-    PlayerEventCreated: 80,
-    PlayerEventUpdated: 81,
-    PlayerEventDeleted: 82,
-    PlayerEventResponseChanged: 83,
-    PlayerEventResponseDeleted: 84,
-    PlayerEventStateChanged: 85,
-    ChatMessageReceived: 90
-};
   
 function start(servePort = ports.WS){
     try {
@@ -81,7 +51,7 @@ async function processRequest(data) {
             res = ""
         }
     } else {
-        res = JSON.stringify(data)
+        res = JSON.stringify({"SessionId": sessionid()})
     }
 
     console.log(`${chalk.blueBright("[WS]")} Data sent: ${res}`);
@@ -98,6 +68,19 @@ async function createResponse(id) {
             GameSession: process.session == undefined ? null : JSON.parse(process.session)
         }
     })
+}
+
+function sessionid() {
+    if(process.session != null){
+        //From my testing, this never seems to happen.
+        //i'll still keep it here just incase.
+        var _session = JSON.parse(process.session)
+        return _session.GameSessionId
+    } else {
+        var sessionID = 20171
+        if (privateRooms) sessionID = Math.floor(Math.random() * (99 - 0 + 1) ) + 0;
+        return sessionID
+    }
 }
 
 module.exports = { start }
