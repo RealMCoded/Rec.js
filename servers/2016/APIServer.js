@@ -41,6 +41,14 @@ async function serve() {
         res.send("[]")
     })
 
+    app.get('/api/relationships/v2/get', (req, res) => {
+        res.send("[]")
+    })
+
+    app.get('/api/messages/v2/get', (req, res) => {
+        res.send("[]")
+    })
+
     app.get('/api/activities/charades/v1/words', (req, res) => {
         res.send(require("../../shared/charades.js").generateCharades())
     })
