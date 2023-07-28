@@ -73,7 +73,7 @@ async function serve() {
     })
 
     app.post('/api/settings/v2/set', (req, res) => {
-        require("../../shared/settings.js").setSettings(req)
+        require("../../shared/settings.js").setSettings(req.body)
         res.send("[]")
     })
 
@@ -86,7 +86,7 @@ async function serve() {
     })
 
     app.post('/api/avatar/v2/set', (req, res) => {
-        require("../../shared/avatar.js").saveAvatar(req, 2016)
+        require("../../shared/avatar.js").saveAvatar(req.body, 2016)
         res.send("[]")
     })
 

@@ -7,8 +7,7 @@ function loadAvatar(ver){
 }  
 
 async function saveAvatar(req, ver){
-    let json = await require("./decode-request.js").decodeRequest(req)
-    json = JSON.parse(json)
+    let json = req
 
     let tempSet = JSON.parse(fs.readFileSync("./user-info/user.json"))
     if (ver == 2016) tempSet.avatar2016 = json; else tempSet.avatar2017 = json;

@@ -2,7 +2,7 @@ const { privateRooms } = require('../config.json')
 const { userid } = require('../user-info/user.json')
 
 function joinRandom(req, ver){
-    let json = JSON.parse(req)
+    let json = req
     var creatorID = userid
     var sessionID = ver + "1"
 
@@ -33,7 +33,7 @@ function joinRandom(req, ver){
 }
 
 function create(req, ver){
-    let json = JSON.parse(req)
+    let json = req
     var creatorID = userid
     var sessionID = ver + "1"
 
@@ -64,7 +64,7 @@ function create(req, ver){
 }
 
 function joinRoom(req, ver){
-    let json = JSON.parse(req)
+    let json = req
     var creatorID = userid
     var sessionID = ver + "1"
 

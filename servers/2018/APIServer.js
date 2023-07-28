@@ -1,12 +1,15 @@
 const chalk = require('chalk') // colored text
 const express = require('express') //express.js - the web server
 const morgan = require('morgan') //for webserver output
+const bodyParser = require("body-parser")
 const app = express()
 const path = require("path")
 app.use(morgan(`${chalk.green("[API]")} :method ":url" :status - :response-time ms`))
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(express.urlencoded({ extended: true })); // support encoded bodies
+
 const { userid, username } = require('../../user-info/user.json')
 const { ports } = require("../../config.json")
-const { decodeRequest } = require('../../shared/decode-request.js')
 
 let port;
 
@@ -192,9 +195,7 @@ function serve() {
     })
 
     app.post('/api/platformlogin/v1/getcachedlogins', async (req, res) => {
-        var data = await decodeRequest(req)
-        data = data.substring(22) //this removes a useless bit to do with 
-        res.send(require("../../shared/cachedlogin.js").cachedLogins(data))
+        res.send(require("../../shared/cachedlogin.js").cachedLogins(req.body.PlatformId))
     })
 
     app.post('/api/platformlogin/v1/logincached', (req, res) => {
@@ -215,7 +216,7 @@ function serve() {
     })
 
     app.post('/api/avatar/v2/set', (req, res) => {
-        require("../../shared/avatar.js").saveAvatar(req, "2017")
+        require("../../shared/avatar.js").saveAvatar(req.body, "2017")
         res.send("[]")
     })
 
@@ -249,23 +250,20 @@ function serve() {
     })
 
     app.post('/api/gamesessions/v2/joinrandom', async (req, res) => {
-        var data = await decodeRequest(req)
-        var ses = require("../../shared/sessions.js").joinRandom(data, "2018")
+        var ses = require("../../shared/sessions.js").joinRandom(req.body, "2018")
         process.session = ses //this makes it so i can share the variable later with the web socket.
         res.send(ses)
     })
 
     app.post('/api/gamesessions/v2/create', async (req, res) => {
-        var data = await decodeRequest(req)
-        var ses = require("../../shared/sessions.js").create(data, "2018")
+        var ses = require("../../shared/sessions.js").create(req.body, "2018")
         process.session = ses //this makes it so i can share the variable later with the web socket.
         res.send(ses)
     })
 
     app.post('/api/gamesessions/v3/joinroom', async (req, res) => {
         console.log(`${chalk.yellow("[WARN]")} The endpoint "/api/gamesessions/v3/joinroom" does not work at the moment, and is expected to fail.`)
-        var data = await decodeRequest(req)
-        var ses = require("../../shared/sessions.js").joinRoom(data, "2018")
+        var ses = require("../../shared/sessions.js").joinRoom(req.body, "2018")
         process.session = ses //this makes it so i can share the variable later with the web socket.
         res.send(ses)
     })
