@@ -4,7 +4,15 @@
 
 ## About Rec.js
 
-Rec.js is RecNet server replacement for old Rec Room builds.
+Rec.js is a server for old Rec Room builds!
+
+This project is similar to OpenRec or Vault Server. If you're looking for a server that is more like OpenRec Live or OpenLabs, check out [LunarRec](https://github.com/RealMCoded/Rec.js).
+
+> *Note: LunarRec is not production ready software. Use at your own risk!*
+
+## Disclaimer
+
+This project is not affiliated with [Rec Room](https://recroom.com/) in any way, nor intends to infringe on their copyrights. Distributing old versions of Rec Room is copyright infringement, so that's why Rec.js does not come bundled with Rec Room at all.
 
 **Rec.js is...**
 
@@ -87,4 +95,4 @@ Since OpenRec is no longer being worked on, Rec.js exists to be an improvement o
 
 This project is under the [**GNU AGPL v3** license](https://github.com/RealMCoded/Rec.js/blob/master/LICENSE). 
 
-*tl;dr: You cannot distribute closed source versions, and if you mofidy this software you **must** link back to the original project which can be found [here](https://github.com/RealMCoded/Rec.js).*
+*tl;dr: You cannot distribute closed source versions, and if you modify this software you **must** link back to the original project which can be found [here](https://github.com/RealMCoded/Rec.js).*
