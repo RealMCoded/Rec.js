@@ -6,7 +6,7 @@
 
 Rec.js is a server for old Rec Room builds!
 
-This project is similar to OpenRec or Vault Server. If you're looking for a server that is more like OpenRec Live or OpenLabs, check out [LunarRec](https://github.com/RealMCoded/Rec.js).
+This project is similar to OpenRec or Vault Server. If you're looking for a server that is more like OpenRec Live or OpenLabs, check out [LunarRec](https://github.com/RealMCoded/LunarRec).
 
 > *Note: LunarRec is not production ready software. Use at your own risk!*
 
