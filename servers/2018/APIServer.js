@@ -270,7 +270,6 @@ function serve() {
     
     app.listen(port, () => {
         console.log(`${chalk.green("[API]")} API started on port ${port}`)
-        console.log(`${chalk.yellowBright("Servers are ready! Please start your build now.")}`)
     })
 }
 

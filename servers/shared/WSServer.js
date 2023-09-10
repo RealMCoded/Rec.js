@@ -4,6 +4,36 @@ const { ports, privateRooms } = require("../../config.json")
 const { userid } = require('../../user-info/user.json')
 
 let port;
+
+const ResponseResults = {
+    RelationshipChanged: 1,
+    MessageReceived: 2,
+    MessageDeleted: 3,
+    PresenceHeartbeatResponse: 4,
+    SubscriptionListUpdated: 9,
+    SubscriptionUpdateProfile: 11,
+    SubscriptionUpdatePresence: 12,
+    SubscriptionUpdateGameSession: 13,
+    SubscriptionUpdateRoom: 15,
+    ModerationQuitGame: 20,
+    ModerationUpdateRequired: 21,
+    ModerationKick: 22,
+    ModerationKickAttemptFailed: 23,
+    ServerMaintenance: 25,
+    GiftPackageReceived: 30,
+    ProfileJuniorStatusUpdate: 40,
+    RelationshipsInvalid: 50,
+    StorefrontBalanceAdd: 60,
+    ConsumableMappingAdded: 70,
+    ConsumableMappingRemoved: 71,
+    PlayerEventCreated: 80,
+    PlayerEventUpdated: 81,
+    PlayerEventDeleted: 82,
+    PlayerEventResponseChanged: 83,
+    PlayerEventResponseDeleted: 84,
+    PlayerEventStateChanged: 85,
+    ChatMessageReceived: 90
+};
   
 function start(servePort = ports.WS){
     try {

@@ -20,6 +20,7 @@ function run(ver, port) {
             console.log(`${chalk.gray("[INFO]")} Starting 2016 server...`)
             require("../servers/2016/APIServer.js").start(port)
             require("../servers/shared/WSServer.js").start()
+            console.log(`${chalk.yellowBright("Server is ready! Please start your build now.")}`)
         } break;
         case "2017": {
             if (autorunBuild) {console.log(`${chalk.gray("[INFO]")} Starting 2017 client...`); try{child_process.exec(buildPaths.rr2017)}catch(err){console.error(`${chalk.red('[ERROR]')} Something bad happened when trying to launch your build!\n\n${err.message}`)}}
@@ -28,6 +29,7 @@ function run(ver, port) {
             require("../servers/2017/APIServer.js").start(port)
             require("../servers/shared/WSServer.js").start()
             require("../servers/shared/CDN.js").start()
+            console.log(`${chalk.yellowBright("Server is ready! Please start your build now.")}`)
         } break;
         case "2018": {
             if (autorunBuild) {console.log(`${chalk.gray("[INFO]")} Starting 2018 client...`); try{child_process.exec(buildPaths.rr2017)}catch(err){console.error(`${chalk.red('[ERROR]')} Something bad happened when trying to launch your build!\n\n${err.message}`)}}
@@ -37,6 +39,7 @@ function run(ver, port) {
             require("../servers/shared/WSServer.js").start()
             require("../servers/2018/NS.js").start()
             require("../servers/shared/CDN.js").start()
+            console.log(`${chalk.yellowBright("Server is ready! Please start your build now.")}`)
         } break;
         default: {console.error(`${chalk.red('[ERROR]')} Invalid version specified.\n${tryText}`)} break;
     }
