@@ -2,8 +2,8 @@
   "name": "recjs",
   "version": "0.1.5",
   "dev": {
-    "is_dev": true,
-    "suffix": "-pre2"
+    "is_dev": false,
+    "suffix": ""
   },
   "description": "A RecNet server replacement for old Rec Room builds",
   "main": "index.js",
