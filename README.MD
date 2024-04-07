@@ -42,7 +42,7 @@ This project is not affiliated with [Rec Room](https://recroom.com/) in any way,
 |------|-----------|--------------------------------|---------------------------------------------------|
 | 2016 | ✅         | December 23rd 2016           |                                                   |
 | 2017 | ✅         | January to October 10th 2017 | The computer does not work properly.              |
-| 2018 | ✅         | March 2018                   | Late 2018 builds (like September) won't work yet. |
+| 2018 | ✅         | March to May 2018            | Late 2018 builds (like September) won't work yet. |
 | 2019 | ❌         |                              | Support for this might never be officially added. |
 | 2020 | ❌         |                              | Support for this might never be officially added. |
 | 2021 | ❌         |                              | Support for this might never be officially added. |
