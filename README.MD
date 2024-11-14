@@ -1,3 +1,13 @@
+# Archival Notice
+
+As of November 13, 2024, Rec.js has been archived.
+
+This is a personal choice of mine mostly due to the fact that i don't really care that much about old Rec Room anymore. 
+
+Feel free to fork and do whatever you want with the project. Maybe someone will patch it for newer builds :P
+
+---
+
 <div align="center">
 <img src="./logo/LogoText.png" alt="A yellow Rec Room logo with text saying 'Rec.js'.">
 </div>
