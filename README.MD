@@ -1,10 +1,8 @@
-# Archival Notice
+# Rec.js is archived!
 
-As of November 13, 2024, Rec.js has been archived.
+Check out [Coach's Time Machine](https://github.com/CoachsTimeMachine) for other servers I am working on.
 
-This is a personal choice of mine mostly due to the fact that i don't really care that much about old Rec Room anymore. 
-
-Feel free to fork and do whatever you want with the project. Maybe someone will patch it for newer builds :P
+This repo is now for archival purposes only. **Please do not use this server at all.**
 
 ---
 
